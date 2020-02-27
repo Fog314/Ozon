@@ -1,0 +1,177 @@
+body {
+    // display: grid;
+    // grid-template-areas: 'navigation-bg'
+    //     'header'
+    //     'main';
+    // grid-template-columns: 1fr;
+    // grid-template-rows: 1fr 1fr 1fr;
+    font-family: Arial;
+}
+
+.navigation-bg {
+    position: absolute;
+    width: 1024px;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    grid-area: navigation-bg;
+
+    .mainTitle {
+        position: absolute;
+        left: 44px;
+        top: 18px;
+        background-image: url('../../pics/logo.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 110px;
+        height: 24px;
+    }
+
+    .navigation {
+        position: absolute;
+        top: 28px;
+        left: 342px;
+        width: 341px;
+        height: 16px;
+
+        &>div {
+            position: relative;
+        }
+
+        button {
+            background: none;
+            border: none;
+            top: 0px;
+            font-size: 12px;
+            line-height: 16px;
+            color: #808D9A;
+            text-align: center;
+            letter-spacing: 0.68px;
+            text-transform: uppercase;
+
+            &:active {
+                color: #001A34;
+            }
+        }
+
+        button:nth-child(0n+1) {
+            // position: absolute;
+            width: 59px;
+            height: 16px;
+            left: calc(50% - 59px/2);
+        }
+
+        button:nth-child(0n+2) {
+            // position: absolute;
+            width: 70px;
+            height: 16px;
+            left: calc(50% - 70px/2);
+        }
+
+        button:nth-child(0n+3) {
+            // position: absolute;
+            width: 52px;
+            height: 16px;
+            left: calc(50% - 52px/2 - 0.5px);
+            top: 0px;
+        }
+
+        button:nth-child(0n+4) {
+            // position: absolute;
+            width: 84px;
+            height: 16px;
+            left: calc(50% - 84px/2 - 0.5px);
+            top: 0px;
+        }
+    }
+
+    .face {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        left: 900px;
+        top: 18px;
+    }
+
+    .card {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        left: 948px;
+        top: 18px;
+
+        .counter {
+            position: absolute;
+            width: 23px;
+            height: 16px;
+            left: 964px;
+            top: 10px;
+            position: absolute;
+            left: 13px;
+            right: 0px;
+            top: -5px;
+            bottom: 0px;
+
+            background: #F91155;
+            border-radius: 8px;
+
+        }
+    }
+
+}
+
+.header {
+    grid-area: header;
+    position: absolute;
+    width: 1024px;
+    height: 78px;
+    left: 0px;
+    top: 60px;
+
+    .title {
+        position: absolute;
+        height: 38px;
+        width: 150px;
+        left: 4.3%;
+        right: 82.13%;
+        top: calc(50% - 38px/2);
+        font-size: 30px;
+        line-height: 38px;
+        /* identical to box height, or 127% */
+        color: #001A34;
+    }
+
+    .objects {
+        position: absolute;
+        height: 20px;
+        left: 18.75%;
+        right: 74.32%;
+        top: calc(50% - 20px/2 + 5px);
+
+        font-family: GTEestiProText;
+        font-size: 16px;
+        line-height: 20px;
+        /* identical to box height, or 125% */
+
+
+        color: #808D9A;
+    }
+}
+
+.main {
+    position: absolute;
+    top: 138px;
+    width: 1024px;
+}
+
+.singleGood{
+    width: 216px;
+    height: 384px;
+    display: inline-block;
+    margin: 24px;
+
+    .picture{
+        height: 200px;
+        width: 200px;
+    }
+}

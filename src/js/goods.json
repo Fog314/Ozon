@@ -1,0 +1,67 @@
+{
+    "1": {
+        "name": "Стул Lars желтый пластик Ш.48 В.83 Г.56 Вес 5.5кг",
+        "price": "7320",
+        "discount": "30",
+        "image": "C:/Ozon/pics/Bitmap.jpg",
+        "isInCart": ""
+    },
+
+    "2": {
+        "name": "Стул Lars желтый пластик Ш.48 В.83 Г.56 Вес 5.5кг",
+        "price": "7320,560",
+        "discount": "0",
+        "image": "../../pics/Bitmap-1.jpg",
+        "isInCart": ""
+    },
+
+    "3": {
+        "name": "Стул Lars желтый пластик Ш.48 В.83 Г.56 Вес 5.5кг",
+        "price": "17320",
+        "discount": "10",
+        "image": "../../pics/Bitmap-2.jpg",
+        "isInCart": ""
+    },
+
+    "4": {
+        "name": "Стул Lars желтый пластик Ш.48 В.83 Г.56 Вес 5.5кг",
+        "price": "11237320",
+        "discount": "15",
+        "image": "../../pics/Bitmap-3.jpg",
+        "isInCart": ""
+    },
+
+    "5": {
+        "name": "Стул Lars желтый пластик Ш.48 В.83 Г.56 Вес 5.5кг",
+        "price": "7320",
+        "discount": "70",
+        "image": "../../pics/Bitmap-4.jpg",
+        "isInCart": ""
+    },
+
+    "6": {
+        "name": "Стул Lars желтый пластик Ш.48 В.83 Г.56 Вес 5.5кг",
+        "price": "7320",
+        "discount": "0",
+        "image": "../../pics/Bitmap-5.jpg",
+        "isInCart": ""
+    },
+
+
+    "7": {
+        "name": "Стул Lars желтый пластик Ш.48 В.83 Г.56 Вес 5.5кг",
+        "price": "7320",
+        "discount": "0",
+        "image": "../../pics/Bitmap-6.jpg",
+        "isInCart": ""
+    },
+
+    "8": {
+        "name": "Стул Lars желтый пластик Ш.48 В.83 Г.56 Вес 5.5кг",
+        "price": "7320",
+        "discount": "0",
+        "image": "../../pics/Bitmap-7.jpg",
+        "isInCart": ""
+    }
+
+}
