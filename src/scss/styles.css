@@ -152,11 +152,62 @@ body {
   width: 216px;
   height: 384px;
   display: inline-block;
-  margin: 24px;
+  margin: 20px;
 }
 
 .singleGood .picture {
   height: 200px;
   width: 200px;
+}
+
+.singleGood .info-block {
+  width: 216px;
+  height: 96px;
+  position: relative;
+}
+
+.singleGood .info-block .price-block {
+  position: absolute;
+  width: 118px;
+  height: 26px;
+  left: 0px;
+  top: 0px;
+}
+
+.singleGood .info-block .name-block {
+  position: absolute;
+  height: 40px;
+  left: 0px;
+  right: 0px;
+  top: calc(50% - 40px/2 - 12px);
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.singleGood .info-block .stars {
+  position: absolute;
+  left: 0%;
+  right: 18.52%;
+  top: 71.88%;
+  bottom: 0%;
+  font-size: 14px;
+  line-height: 18px;
+  color: #808D9A;
+}
+
+.singleGood .info-block .buttonContainer {
+  position: absolute;
+  left: 0%;
+  right: 18.52%;
+  top: 100%;
+}
+
+.singleGood .info-block .buttonContainer button {
+  width: 96px;
+  height: 32px;
+  background: #005BFF;
+  color: white;
+  border: none;
+  border-radius: 3px;
 }
 /*# sourceMappingURL=styles.css.map */
