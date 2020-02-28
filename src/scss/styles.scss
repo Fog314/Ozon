@@ -203,7 +203,6 @@ body {
             position: absolute;
             width: 34px;
             height: 20px;
-            // left: 524px;
             top: -30px;
             background: #F91155;
             border-radius: 3px;
@@ -329,6 +328,14 @@ body {
         text-align: right;
         color: #F91155;
         font-weight: 500;
+        cursor: pointer;
+        user-select: none;
+        &:hover{
+            opacity: 0.7;
+        }
+        &:active{
+            color: rgb(0, 0, 0);
+        }
     }
 }
 
@@ -388,6 +395,7 @@ body {
             line-height: 26px;
             text-align: right;
             color: #001A34;
+            font-weight: 800;
         }
     }
 }
@@ -412,6 +420,7 @@ body {
 
     .orderPrice {
         display: grid;
+        grid-template-areas: 'goods summa';
         grid-template-columns: 1fr 1fr;
         position: absolute;
         color: #001A34;
@@ -423,13 +432,108 @@ body {
         line-height: 20px;
         width: 100%;
         margin-right: 24px;
+
     }
-    .goods{
+
+    .goods {
+        grid-area: goods;
+    }
+
+    .summa {
+        grid-area: summa;
+        text-align: right;
+        font-size: 16;
+        margin-right: 48px;
+        font-weight: 800;
+    }
+
+    .orderDiscount {
+        display: grid;
+        grid-template-areas: 'discount discountSum';
+        grid-template-columns: 1fr 1fr;
+        position: absolute;
         left: 3.45%;
         right: 45.98%;
-        top: 23.49%;
-        bottom: 69.4%;
+        top: 36.3%;
+        bottom: 56.58%;
         font-size: 16px;
         line-height: 20px;
+        color: #001A34;
+        width: 100%;
+
+        .discount {
+            grid-area: discount;
+        }
+
+        .discountSum {
+            grid-area: discountSum;
+            text-align: right;
+            font-size: 16;
+            margin-right: 48px;
+            font-weight: 800;
+            color: #F91155;
+        }
+    }
+
+    hr {
+        position: absolute;
+        top: 46.3%;
+        bottom: 56.58%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 696-48px;
+        background: #001a342a;
+    }
+
+    .generalSum {
+        position: absolute;
+        display: grid;
+        grid-template-areas: 'generalText summa';
+        grid-template-columns: 1fr 1fr;
+        left: 3.45%;
+        right: 45.98%;
+        top: 55.16%;
+        bottom: 35.59%;
+        font-size: 20px;
+        line-height: 26px;
+        color: #001A34;
+        width: 100%;
+
+        .generalSum-text {
+            grid-area: generalText;
+            font-weight: 800;
+        }
+
+        .generalSum-summa {
+            grid-area: summa;
+            text-align: right;
+            margin-right: 48px;
+            font-weight: 800;
+        }
+    }
+}
+
+.catalogButton {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 55%;
+    width: 196px;
+    height: 32px;
+    background: #005BFF;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
     }
 }
