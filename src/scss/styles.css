@@ -1,12 +1,19 @@
+html {
+  height: 100%;
+}
+
 body {
   font-family: Arial;
+  display: relative;
 }
 
 .navigation-bg {
   position: absolute;
   width: 1024px;
   height: 60px;
-  left: 0px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   top: 0px;
   grid-area: navigation-bg;
 }
@@ -124,7 +131,9 @@ body {
   position: absolute;
   width: 1024px;
   height: 78px;
-  left: 0px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   top: 60px;
 }
 
@@ -158,6 +167,9 @@ body {
   position: absolute;
   top: 138px;
   width: 1024px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .singleGood {
@@ -272,11 +284,13 @@ body {
   outline: none;
 }
 
-.rectangle {
+.cartSelect {
   position: absolute;
   width: 696px;
   height: 60px;
-  left: 2.3%;
+  left: 43%;
+  -webkit-transform: translateX(-48%);
+          transform: translateX(-48%);
   right: 82.13%;
   top: 138px;
   background: #F2F3F5;
@@ -287,14 +301,14 @@ body {
       grid-template-columns: 1fr 1fr;
 }
 
-.rectangle .select {
+.cartSelect .select {
   margin: 24px;
   text-align: left;
   font-size: 14px;
   line-height: -50px;
 }
 
-.rectangle .delete {
+.cartSelect .delete {
   text-align: right;
   margin: 24px;
   font-size: 14px;
@@ -307,7 +321,9 @@ body {
 .cartsContainer {
   position: absolute;
   width: 696px;
-  left: 2.3%;
+  left: 43%;
+  -webkit-transform: translateX(-48%);
+          transform: translateX(-48%);
   right: 82.13%;
   top: 198px;
   margin-top: 18px;
@@ -358,12 +374,59 @@ body {
   text-align: right;
   position: absolute;
   width: 100%;
-  height: 26px;
+  height: 100%;
   left: 0px;
-  top: calc(50% - 26px/2);
+  top: 50%;
+  -webkit-transform: translateY(-25%);
+          transform: translateY(-25%);
   font-size: 20px;
   line-height: 26px;
   text-align: right;
   color: #001A34;
+}
+
+.finalOrder {
+  width: 696px;
+  height: 281px;
+  background: #F2F3F5;
+  position: relative;
+}
+
+.finalOrder .orderTitle {
+  position: absolute;
+  height: 26px;
+  left: 3.45%;
+  right: 65.52%;
+  top: calc(50% - 26px/2 - 103.5px);
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 800;
+  color: #001A34;
+}
+
+.finalOrder .orderPrice {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  position: absolute;
+  color: #001A34;
+  left: 3.45%;
+  right: 45.98%;
+  top: 23.49%;
+  bottom: 69.4%;
+  font-size: 16px;
+  line-height: 20px;
+  width: 100%;
+  margin-right: 24px;
+}
+
+.finalOrder .goods {
+  left: 3.45%;
+  right: 45.98%;
+  top: 23.49%;
+  bottom: 69.4%;
+  font-size: 16px;
+  line-height: 20px;
 }
 /*# sourceMappingURL=styles.css.map */

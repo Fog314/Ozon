@@ -7,37 +7,47 @@ function script() {
     }
 
     document.querySelector(".counter").textContent = localStorage.getItem('counter');
-    console.log(parseFloat(numTimes % 10));
-    switch (numTimes) {
+    let num = parseFloat(numTimes % 10);
+    switch (num) {
         case (0):
             document.querySelector(".objects").textContent = localStorage.getItem('counter') + ' товаров';
+            document.querySelector(".orderPrice .goods").textContent = localStorage.getItem('counter') + ' товаров на сумму';
             break;
         case (1):
             document.querySelector(".objects").textContent = localStorage.getItem('counter') + ' товар';
+            document.querySelector(".orderPrice .goods").textContent = localStorage.getItem('counter') + ' товар на сумму';
             break;
         case (2):
             document.querySelector(".objects").textContent = localStorage.getItem('counter') + ' товара';
+            document.querySelector(".orderPrice .goods").textContent = localStorage.getItem('counter') + ' товара на сумму';
             break;
         case (3):
             document.querySelector(".objects").textContent = localStorage.getItem('counter') + ' товара';
+            document.querySelector(".orderPrice .goods").textContent = localStorage.getItem('counter') + ' товара на сумму';
             break;
         case (4):
             document.querySelector(".objects").textContent = localStorage.getItem('counter') + ' товара';
+            document.querySelector(".orderPrice .goods").textContent = localStorage.getItem('counter') + ' товара на сумму';
             break;
         case (5):
             document.querySelector(".objects").textContent = localStorage.getItem('counter') + ' товаров';
+            document.querySelector(".orderPrice .goods").textContent = localStorage.getItem('counter') + ' товаров на сумму';
             break;
         case (6):
             document.querySelector(".objects").textContent = localStorage.getItem('counter') + ' товаров';
+            document.querySelector(".orderPrice .goods").textContent = localStorage.getItem('counter') + ' товаров на сумму';
             break;
         case (7):
             document.querySelector(".objects").textContent = localStorage.getItem('counter') + ' товаров';
+            document.querySelector(".orderPrice .goods").textContent = localStorage.getItem('counter') + ' товаров на сумму';
             break;
         case (8):
             document.querySelector(".objects").textContent = localStorage.getItem('counter') + ' товаров';
+            document.querySelector(".orderPrice .goods").textContent = localStorage.getItem('counter') + ' товаров на сумму';
             break;
         case (9):
             document.querySelector(".objects").textContent = localStorage.getItem('counter') + ' товаров';
+            document.querySelector(".orderPrice .goods").textContent = localStorage.getItem('counter') + ' товаров на сумму';
             break;
         default:
             break;

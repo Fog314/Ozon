@@ -78,17 +78,37 @@ function loadcarts() {
             out += '<input type="checkbox" id=' + data.article + '>';
             out += '<div class = "image-container" style="background: url(' + data.image + '); background-size: contain; background-repeat: no-repeat;">';
             out += '</div>';
-            out += '<label class="name-container" for ="'+data.article+'">';
+            out += '<label class="name-container" for ="' + data.article + '">';
             out += data.name;
             out += '</label>';
             out += '</div>';
             out += '<div class="cartsPrice">';
-            out += data.price + ' ₽';
+            if (data.discount != '0') {
+                out += '<div class="currentPrice" style="display:inline-block; color: #F91155;">';
+                out += parseFloat(data.price) - parseFloat(data.price) / 100 * data.discount + ' ₽';
+                out += '</div><br>';
+                out += '<div class="oldPrice" style="display:inline-block; margin-left: 5px; text-decoration: line-through; text-decoration-color: #F91155; font-size: 12px">';
+                out += data.price + ' ₽';
+                out += '</div>';
+                out += '</div>';
+            } else {
+                out += data.price + ' ₽';
+            }
             out += '</div>';
-            out += '</div>';
-            out += '<div class="FinalPrice">';
             out += '</div>';
         }
     }
+    
+    out += '<div class="finalOrder">';
+    out += '<div class="orderTitle">';
+    out += 'Ваш заказ';
+    out += '</div>';
+    out += '<div class="orderPrice">';
+    out += '<div class="goods">';
+    out += '<div class="summa">';
+    // out += 
+    out += '</div>';
+    out += '</div>';
+    out += '</div>';
     $('.cartsContainer').html(out);
 }
