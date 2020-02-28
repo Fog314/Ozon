@@ -26,7 +26,7 @@ body {
   position: absolute;
   top: 28px;
   left: 342px;
-  width: 341px;
+  width: 541px;
   height: 16px;
 }
 
@@ -44,10 +44,20 @@ body {
   text-align: center;
   letter-spacing: 0.68px;
   text-transform: uppercase;
+  font-weight: 600;
+  margin-left: 24.5px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
 }
 
-.navigation-bg .navigation button:active {
+.navigation-bg .navigation button:active, .navigation-bg .navigation button:focus {
   color: #001A34;
+  outline: none;
+}
+
+.navigation-bg .navigation button:hover {
+  color: #005bff;
 }
 
 .navigation-bg .navigation button:nth-child(0n+1) {
@@ -84,7 +94,7 @@ body {
   top: 18px;
 }
 
-.navigation-bg .card {
+.navigation-bg .cart {
   position: absolute;
   width: 24px;
   height: 24px;
@@ -92,17 +102,19 @@ body {
   top: 18px;
 }
 
-.navigation-bg .card .counter {
+.navigation-bg .cart .counter {
+  display: none;
   position: absolute;
   width: 23px;
   height: 16px;
-  left: 964px;
-  top: 10px;
-  position: absolute;
   left: 13px;
   right: 0px;
   top: -5px;
   bottom: 0px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 16px;
+  color: #FFFFFF;
   background: #F91155;
   border-radius: 8px;
 }
@@ -125,20 +137,20 @@ body {
   top: calc(50% - 38px/2);
   font-size: 30px;
   line-height: 38px;
-  /* identical to box height, or 127% */
+  font-weight: 600;
   color: #001A34;
 }
 
 .header .objects {
   position: absolute;
   height: 20px;
-  left: 18.75%;
+  left: 19.75%;
   right: 74.32%;
   top: calc(50% - 20px/2 + 5px);
-  font-family: GTEestiProText;
+  width: 200px;
   font-size: 16px;
   line-height: 20px;
-  /* identical to box height, or 125% */
+  font-weight: bold;
   color: #808D9A;
 }
 
@@ -166,12 +178,49 @@ body {
   position: relative;
 }
 
+.singleGood .info-block .badge {
+  position: absolute;
+  width: 34px;
+  height: 20px;
+  top: -30px;
+  background: #F91155;
+  border-radius: 3px;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.singleGood .info-block .badge .badgeText {
+  position: absolute;
+  height: 16px;
+  left: 6px;
+  right: 1px;
+  top: calc(50% - 16px/2);
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+  text-align: center;
+  color: #FFFFFF;
+}
+
 .singleGood .info-block .price-block {
   position: absolute;
-  width: 118px;
+  width: 100%;
   height: 26px;
   left: 0px;
-  top: 0px;
+  top: -4px;
+}
+
+.singleGood .info-block .price-block .currentPrice {
+  font-weight: 800;
+  width: auto;
+}
+
+.singleGood .info-block .price-block .oldPrice {
+  font-size: 12px;
+  line-height: 16px;
+  color: #001A34;
 }
 
 .singleGood .info-block .name-block {
@@ -209,5 +258,112 @@ body {
   color: white;
   border: none;
   border-radius: 3px;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.singleGood .info-block .buttonContainer button:hover {
+  opacity: 0.7;
+}
+
+.singleGood .info-block .buttonContainer button:active, .singleGood .info-block .buttonContainer button:focus {
+  outline: none;
+}
+
+.rectangle {
+  position: absolute;
+  width: 696px;
+  height: 60px;
+  left: 2.3%;
+  right: 82.13%;
+  top: 138px;
+  background: #F2F3F5;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'left right';
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.rectangle .select {
+  margin: 24px;
+  text-align: left;
+  font-size: 14px;
+  line-height: -50px;
+}
+
+.rectangle .delete {
+  text-align: right;
+  margin: 24px;
+  font-size: 14px;
+  line-height: -50px;
+  text-align: right;
+  color: #F91155;
+  font-weight: 500;
+}
+
+.cartsContainer {
+  position: absolute;
+  width: 696px;
+  left: 2.3%;
+  right: 82.13%;
+  top: 198px;
+  margin-top: 18px;
+}
+
+.cartsContainer .carts {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'cartsInfo cartsPrice';
+  -ms-grid-columns: 7fr 3fr;
+      grid-template-columns: 7fr 3fr;
+  margin: 24px;
+  position: relative;
+}
+
+.cartsContainer .carts .image-container {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  left: 100px;
+  background-size: contain;
+  margin-left: 32px;
+}
+
+.cartsContainer .carts .name-container {
+  font-size: 16px;
+  position: absolute;
+  height: 40px;
+  left: 0px;
+  right: 0px;
+  top: calc(50% - 40px/2);
+  margin-left: 152px;
+  color: #001A34;
+  width: 220px;
+  cursor: pointer;
+}
+
+.cartsContainer .carts .cartsInfo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: cartsInfo;
+}
+
+.cartsContainer .carts .cartsPrice {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: cartsPrice;
+  text-align: right;
+  position: absolute;
+  width: 100%;
+  height: 26px;
+  left: 0px;
+  top: calc(50% - 26px/2);
+  font-size: 20px;
+  line-height: 26px;
+  text-align: right;
+  color: #001A34;
 }
 /*# sourceMappingURL=styles.css.map */
