@@ -312,12 +312,26 @@ body {
     display: grid;
     grid-template-areas: 'left right';
     grid-template-columns: 1fr 1fr;
+    user-select: none;
 
     .select {
         margin: 24px;
         text-align: left;
         font-size: 14px;
         line-height: -50px;
+
+        label {
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.7;
+            }
+
+            &:active {
+                color: #F91155;
+            }
+        }
+
     }
 
     .delete {
@@ -329,11 +343,12 @@ body {
         color: #F91155;
         font-weight: 500;
         cursor: pointer;
-        user-select: none;
-        &:hover{
+
+        &:hover {
             opacity: 0.7;
         }
-        &:active{
+
+        &:active {
             color: rgb(0, 0, 0);
         }
     }
@@ -511,6 +526,61 @@ body {
             font-weight: 800;
         }
     }
+
+    .getOrder {
+        position: absolute;
+        left: 3.45%;
+        right: 53.74%;
+        top: 77.22%;
+        bottom: 8.54%;
+        font-size: 16px;
+        width: 100%;
+
+        .getOrder-text {
+            // position: absolute;
+            // left: 3.45%;
+            // right: 53.74%;
+            // top: 77.22%;
+            // bottom: 8.54%;
+            width: 45%;
+            font-size: 16px;
+            line-height: 20px;
+            color: #808D9A;
+            display: inline-block;
+        }
+
+        .getOrder-button {
+            position: absolute;
+            left: 53%;
+            top: 30%;
+            transform: translateY(-50%);
+            bottom: 7.12%;
+            display: inline-block;
+            width: 40%;
+            text-align: right;
+
+            button {
+                height: 48px;
+                width: 100%;
+                background: #005BFF;
+                color: white;
+                border: none;
+                border-radius: 3px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease 0s;
+
+                &:hover {
+                    opacity: 0.7;
+                }
+
+                &:active,
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
 }
 
 .catalogButton {
@@ -535,5 +605,49 @@ body {
     &:active,
     &:focus {
         outline: none;
+    }
+}
+
+.registration {
+    position: absolute;
+    top: 138px;
+    width: 1024px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    form {
+        position: absolute;
+        width: 696px;
+        left: 4.3%;
+        right: 82.13%;
+        top: calc(50% - 38px/2);
+        background: #F2F3F5;
+        label{
+            margin-left: 30px;
+        }
+    }
+
+    output{
+        display: block;
+        font-size: 16px;
+        margin: 40px 10px 30px 30px;
+        color: #216BFF;
+    }
+
+    input {
+        display: block;
+        margin: 10px 10px 30px 30px;
+        border: 1px solid;
+        font-size: 16px;
+        height: 25px;
+    }
+
+    select{
+        display: block;
+        margin: 10px 10px 30px 30px;
+        border: 1px solid;
+        font-size: 16px;
+        height: 25px;
+        width: 197px;
     }
 }

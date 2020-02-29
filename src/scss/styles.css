@@ -299,6 +299,10 @@ body {
       grid-template-areas: 'left right';
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .cartSelect .select {
@@ -306,6 +310,18 @@ body {
   text-align: left;
   font-size: 14px;
   line-height: -50px;
+}
+
+.cartSelect .select label {
+  cursor: pointer;
+}
+
+.cartSelect .select label:hover {
+  opacity: 0.7;
+}
+
+.cartSelect .select label:active {
+  color: #F91155;
 }
 
 .cartSelect .delete {
@@ -317,10 +333,6 @@ body {
   color: #F91155;
   font-weight: 500;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 
 .cartSelect .delete:hover {
@@ -530,6 +542,57 @@ body {
   font-weight: 800;
 }
 
+.finalOrder .getOrder {
+  position: absolute;
+  left: 3.45%;
+  right: 53.74%;
+  top: 77.22%;
+  bottom: 8.54%;
+  font-size: 16px;
+  width: 100%;
+}
+
+.finalOrder .getOrder .getOrder-text {
+  width: 45%;
+  font-size: 16px;
+  line-height: 20px;
+  color: #808D9A;
+  display: inline-block;
+}
+
+.finalOrder .getOrder .getOrder-button {
+  position: absolute;
+  left: 53%;
+  top: 30%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  bottom: 7.12%;
+  display: inline-block;
+  width: 40%;
+  text-align: right;
+}
+
+.finalOrder .getOrder .getOrder-button button {
+  height: 48px;
+  width: 100%;
+  background: #005BFF;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.finalOrder .getOrder .getOrder-button button:hover {
+  opacity: 0.7;
+}
+
+.finalOrder .getOrder .getOrder-button button:active, .finalOrder .getOrder .getOrder-button button:focus {
+  outline: none;
+}
+
 .catalogButton {
   position: absolute;
   left: 50%;
@@ -554,5 +617,51 @@ body {
 
 .catalogButton:active, .catalogButton:focus {
   outline: none;
+}
+
+.registration {
+  position: absolute;
+  top: 138px;
+  width: 1024px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.registration form {
+  position: absolute;
+  width: 696px;
+  left: 4.3%;
+  right: 82.13%;
+  top: calc(50% - 38px/2);
+  background: #F2F3F5;
+}
+
+.registration form label {
+  margin-left: 30px;
+}
+
+.registration output {
+  display: block;
+  font-size: 16px;
+  margin: 40px 10px 30px 30px;
+  color: #216BFF;
+}
+
+.registration input {
+  display: block;
+  margin: 10px 10px 30px 30px;
+  border: 1px solid;
+  font-size: 16px;
+  height: 25px;
+}
+
+.registration select {
+  display: block;
+  margin: 10px 10px 30px 30px;
+  border: 1px solid;
+  font-size: 16px;
+  height: 25px;
+  width: 197px;
 }
 /*# sourceMappingURL=styles.css.map */

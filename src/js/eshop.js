@@ -20,17 +20,17 @@
                     out += '</div>';
                     out += '<div class="price-block">';
                     out += '<div class="currentPrice" style="display:inline-block; color: #F91155;">';
-                    out += parseFloat(data[key]["price"]) - parseFloat(data[key]["price"]) / 100 * data[key]["discount"] + '₽';
+                    out += (parseFloat(data[key]["price"]) - parseFloat(data[key]["price"]) / 100 * data[key]["discount"]).toFixed(2) + '₽';
                     out += '</div>';
                     out += '<div class="oldPrice" style="display:inline-block; margin-left: 5px; text-decoration: line-through; text-decoration-color: #F91155">';
-                    out += data[key]["price"] + ' ₽';
+                    out += (parseFloat(data[key]["price"])).toFixed(2) + ' ₽';
                     out += '</div>';
                     out += '</div>';
 
                 } else {
                     out += '<div class="price-block">';
                     out += '<div class="currentPrice">';
-                    out += data[key]["price"] + ' ₽';
+                    out += (parseFloat(data[key]["price"])).toFixed(2) + ' ₽';
                     out += '</div>';
                     out += '</div>';
                 }
@@ -76,7 +76,7 @@ function loadcarts() {
             document.querySelector(".counter").style.display = 'initial';
             let data = JSON.parse(localStorage.getItem(key));
             console.log(data.price);
-            out += '<div class = carts>';
+            out += '<div class = carts id=' + data.article + '>';
             out += '<div class = cartsInfo>';
             out += '<input type="checkbox" id=' + data.article + ' checked="checked">';
             out += '<div class = "image-container" style="background: url(' + data.image + '); background-size: contain; background-repeat: no-repeat;">';
@@ -103,6 +103,7 @@ function loadcarts() {
             out += '</div>';
         }
     }
+
     out += '<div class="finalOrder">';
     out += '<div class="orderTitle">';
     out += 'Ваш заказ';
@@ -119,7 +120,12 @@ function loadcarts() {
     out += 'Скидка'
     out += '</div>';
     out += '<div class="discountSum">';
-    out += '- ' + discount + ' ₽';
+    out += '<div class="discountSumMinus" style="display: inline-block">'
+    out += '- ';
+    out += '</div>';
+    out += '<div class="discountSumText" style="display: inline-block">'
+    out += discount.toFixed(2) + ' ₽';
+    out += '</div>';
     out += '</div>';
     out += '</div>';
     out += '<hr>';
@@ -128,12 +134,25 @@ function loadcarts() {
     out += 'Общая стоимость'
     out += '</div>';
     out += '<div class="generalSum-summa">';
-    out += summa - discount + ' ₽';
+    out += (parseFloat(summa - discount)).toFixed(2) + ' ₽';
+    out += '</div>';
+    out += '</div>';
+    out += '<div class="getOrder">';
+    out += '<div class="getOrder-text">';
+    out += 'Доступные способы и время доставки можно выбрать при оформлении заказа';
+    out += '</div>';
+    out += '<div class="getOrder-button">';
+    out += '<form action = reg.html><button type="submit">Оформить</button></form>';
+    // out += '';
     out += '</div>';
     out += '</div>';
     out += '</div>';
     $('.cartsContainer').html(out);
+    check();
+    clearCart();
+}
 
+function clearCart() {
     if (document.querySelector('.carts') == null) {
         // $('.header .title').html('<div>Корзина пуста</div>');
         $('.objects').hide();
@@ -145,10 +164,31 @@ function loadcarts() {
             'margin-top': '50px'
         });
     }
-
-    check();
-
 }
+// function sumCalc() {
+//     let numTimes = localStorage.getItem("counter");
+//     if (numTimes == null) {
+//         numTimes = 0;
+//     } else {
+//         numTimes = parseInt(numTimes, 10);
+//     }
+//     let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+//     let summa = 0;
+//     let counter = 0;
+//     for (let checkbox of checkboxes) {
+//         let data = JSON.parse(localStorage.getItem(checkbox.getAttribute('id')));
+//         console.log(data);
+//         if (!(checkbox.hasAttribute('checked'))) {
+//             localStorage.removeItem(checkbox.getAttribute('id'));
+//             numTimes--;
+//             localStorage.setItem("counter", (numTimes).toString(10));
+//             document.querySelector(".counter").textContent = localStorage.getItem('counter');
+//             console.log(counter);
+//             localStorage.setItem('counter', counter);
+
+//         }
+//     }
+// }
 
 function check() {
     let checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -156,35 +196,94 @@ function check() {
     for (let checkbox of checkboxes) {
         checkbox.addEventListener('change', function () {
             if (this.checked) {
-                checkbox.setAttribute('checked', 'checked');
+                if (checkbox.getAttribute('id') !== 'checkAll') {
+                    checkbox.setAttribute('checked', 'checked');
+                    localStorage.setItem(checkbox.getAttribute('id'), (JSON.stringify(JSON.parse(localStorage.getItem('data'))[checkbox.getAttribute('id')])));
+                    localStorage.setItem('counter', (parseFloat(localStorage.getItem('counter')) + 1));
+                    document.querySelector(".counter").textContent = localStorage.getItem('counter');
+                    let data = JSON.parse(localStorage.getItem('data'))[checkbox.getAttribute('id')];
+                    console.log(data);
+                    let summa = (parseFloat(document.querySelector('.summa').textContent) + parseFloat(data.price)).toFixed(2);
+                    console.log(parseFloat(document.querySelector('.discountSumText').textContent));
+                    let discount = ((parseFloat(document.querySelector('.discountSumText').textContent) + parseFloat(parseFloat(data.price) / 100 * data.discount)).toFixed(2));
+                    document.querySelector('.discountSumText').textContent = discount + ' ₽';
+                    document.querySelector('.summa').textContent = summa + ' ₽';
+                    document.querySelector('.generalSum-summa').textContent = summa - discount + ' ₽';
+                    if (parseFloat(localStorage.getItem('counter')) == 0) {
+                        document.querySelector(".counter").style.display = 'none';
+                        console.log('Ravno nulu');
+                    }
+                    if (parseFloat(localStorage.getItem('counter')) !== 0) {
+                        console.log('Ne ravno nulu');
+                        document.querySelector(".counter").style.display = 'block';
+                    }
+                    script();
+                }
             } else {
-                checkbox.removeAttribute("checked");
+                if (checkbox.getAttribute('id') !== 'checkAll') {
+                    checkbox.removeAttribute("checked");
+                    localStorage.removeItem(checkbox.getAttribute('id'));
+                    localStorage.setItem('counter', (parseFloat(localStorage.getItem('counter')) - 1));
+                    document.querySelector(".counter").textContent = localStorage.getItem('counter');
+                    if (parseFloat(localStorage.getItem('counter')) == 0) {
+                        document.querySelector(".counter").style.display = 'none';
+                    }
+                    if (parseFloat(localStorage.getItem('counter')) !== 0) {
+                        document.querySelector(".counter").style.display = 'block';
+                    }
+                    let data = JSON.parse(localStorage.getItem('data'))[checkbox.getAttribute('id')];
+                    let summa = (parseFloat(document.querySelector('.summa').textContent) - parseFloat(data.price)).toFixed(2);
+                    document.querySelector('.summa').textContent = summa + ' ₽';
+                    let discount = (parseFloat(document.querySelector('.discountSumText').textContent) - parseFloat(parseFloat(data.price) / 100 * data.discount).toFixed(2));
+                    document.querySelector('.discountSumText').textContent = discount.toFixed(2) + ' ₽';
+                    document.querySelector('.generalSum-summa').textContent = (summa - discount).toFixed(2) + ' ₽';
+                    script();
+                }
             }
         });
     }
 };
 
-// document.querySelector('#checkAll').addEventListener('change', function () {
-//     let checkboxes = document.querySelectorAll('input[type="checkbox"]');
-//     if (this.checked) {
-//         for (let checkbox of checkboxes) {
-//             checkbox.setAttribute('checked', 'checked');
-//         }
-//     } else {
-//         for (let checkbox of checkboxes) {
-//             checkbox.removeAttribute("checked");
-//         }
-//     }
-// });
+document.querySelector('.delete').addEventListener('click', function () {
+    let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (let checkbox of checkboxes) {
+        if (checkbox.getAttribute('checked')) {
+            $('div#' + checkbox.getAttribute('id')).remove();
+            localStorage.removeItem(checkbox.getAttribute('id'));
+            clearCart();
+        }
+    }
+    localStorage.setItem('counter', 0);
+    document.querySelector(".counter").textContent = localStorage.getItem('counter');
+    if (parseFloat(localStorage.getItem('counter')) == 0) {
+        document.querySelector(".counter").style.display = 'none';
+    }
+    if (parseFloat(localStorage.getItem('counter')) !== 0) {
+        document.querySelector(".counter").style.display = 'block';
+    }
+    document.querySelector('.summa').textContent = parseFloat(0).toFixed(2) + ' ₽';
+    document.querySelector('.discountSumText').textContent = parseFloat(0).toFixed(2) + ' ₽';
+    document.querySelector('.generalSum-summa').textContent = parseFloat(0).toFixed(2) + ' ₽';
+    document.querySelector(".counter").textContent = localStorage.getItem('counter');
 
-// document.querySelector('.delete').addEventListener('click', function () {
-//     let checkboxes = document.querySelectorAll('input[type="checkbox"]');
-//     console.log(checkboxes);
-//     for (let checkbox of checkboxes) {
-//         if (checkbox.hasAttribute('checked')) {
-//             console.log(checkbox);
-//             console.log('hello');
-//             localStorage.removeItem(checkbox.getAttribute('id'));
-//         }
-//     }
-// });
+})
+
+document.querySelector('#checkAll').addEventListener('change', function () {
+    let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    if (this.checked) {
+        this.setAttribute('checked', 'checked');
+        for (let checkbox of checkboxes) {
+            if (!checkbox.hasAttribute('checked')) {
+                checkbox.click();
+            }
+        }
+    } else {
+        this.removeAttribute('checked');
+        for (let checkbox of checkboxes) {
+            if (checkbox.hasAttribute('checked')) {
+                checkbox.click();
+            }
+        }
+    }
+
+})
