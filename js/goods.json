@@ -78,7 +78,7 @@
         "discount": "10",
         "image": "../../img/Bitmap-2.jpg",
         "isInCart": "",
-        "article": "3"
+        "article": "9"
     },
 
     "10": {
@@ -87,7 +87,7 @@
         "discount": "15",
         "image": "../../img/Bitmap-3.jpg",
         "isInCart": "",
-        "article": "4"
+        "article": "10"
     },
 
     "11": {
@@ -96,7 +96,7 @@
         "discount": "75",
         "image": "../../img/Bitmap-4.jpg",
         "isInCart": "",
-        "article": "5"
+        "article": "11"
     },
 
     "12": {
@@ -105,7 +105,7 @@
         "discount": "40",
         "image": "../../img/Bitmap-5.jpg",
         "isInCart": "",
-        "article": "6"
+        "article": "12"
     },
 
 
@@ -115,7 +115,7 @@
         "discount": "0",
         "image": "../../img/Bitmap-6.jpg",
         "isInCart": "",
-        "article": "7"
+        "article": "13"
     },
 
     "14": {
@@ -124,7 +124,7 @@
         "discount": "0",
         "image": "../../img/Bitmap-7.jpg",
         "isInCart": "",
-        "article": "8"
+        "article": "14"
     }
 
 }
