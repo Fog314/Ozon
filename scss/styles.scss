@@ -27,7 +27,7 @@ body {
         position: absolute;
         left: 44px;
         top: 18px;
-        background-image: url('../../pics/logo.png');
+        background-image: url('../../img/logo.png');
         background-repeat: no-repeat;
         background-size: contain;
         width: 110px;
@@ -57,13 +57,14 @@ body {
             text-transform: uppercase;
             font-weight: 600;
             margin-left: 24.5px;
-            transition: all 0.3s ease 0s;
+            transition: all 0.3s ease-in-out 0s;
             cursor: pointer;
 
             &:active,
             &:focus {
                 color: #001A34;
                 outline: none;
+                cursor: default;
             }
 
             &:hover {
@@ -390,7 +391,6 @@ body {
             margin-left: 152px;
             color: #001A34;
             width: 220px;
-            cursor: pointer;
         }
 
         .cartsInfo {
@@ -577,6 +577,7 @@ body {
                 &:active,
                 &:focus {
                     outline: none;
+                    cursor: default;
                 }
             }
         }
@@ -588,8 +589,8 @@ body {
     left: 50%;
     transform: translateX(-50%);
     top: 55%;
-    width: 196px;
-    height: 32px;
+    width: 200px;
+    height: 40px;
     background: #005BFF;
     color: white;
     border: none;
@@ -605,6 +606,7 @@ body {
     &:active,
     &:focus {
         outline: none;
+        cursor: default;
     }
 }
 
@@ -622,12 +624,13 @@ body {
         right: 82.13%;
         top: calc(50% - 38px/2);
         background: #F2F3F5;
-        label{
+
+        label {
             margin-left: 30px;
         }
     }
 
-    output{
+    output {
         display: block;
         font-size: 16px;
         margin: 40px 10px 30px 30px;
@@ -642,7 +645,7 @@ body {
         height: 25px;
     }
 
-    select{
+    select {
         display: block;
         margin: 10px 10px 30px 30px;
         border: 1px solid;
@@ -650,4 +653,175 @@ body {
         height: 25px;
         width: 197px;
     }
+}
+
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+    .navigation-bg .cart .counter {
+        display: block !important;
+    }
+
+    .catalogButton {
+        top: 65%;
+    }
+
+    .orderTitle {
+        left: 0% !important;
+        top: calc(40% - 26px/2 - 103.5px) !important;
+    }
+}
+
+svg {
+
+    &:hover {
+        stroke: rgba(0, 89, 255, 0.246);
+
+    }
+
+    &:active {
+        opacity: 0.7;
+    }
+
+}
+
+label.checkAll{
+    position: absolute;
+    top: 23px;
+    left: 55px;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 4px;
+    top: 0px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+
+.containerAll {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.containerAll input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+
+.checkmarkAll {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.containerAll:hover input~.checkmarkAll {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.containerAll input:checked~.checkmarkAll {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmarkAll:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.containerAll input:checked~.checkmarkAll:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.containerAll .checkmarkAll:after {
+    left: 4px;
+    top: 0px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }

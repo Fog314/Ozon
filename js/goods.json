@@ -3,7 +3,7 @@
         "name": "Стул Lars желтый пластик Ш.48 В.83 Г.56 Вес 5.5кг",
         "price": "7320",
         "discount": "30",
-        "image": "../../pics/Bitmap.jpg",
+        "image": "../../img/Bitmap.jpg",
         "isInCart": "",
         "article": "1"
     },
@@ -12,7 +12,7 @@
         "name": "Стул Lars желтый пластик Ш.48 В.83 Г.56 Вес 5.5кг",
         "price": "7320.560",
         "discount": "0",
-        "image": "../../pics/Bitmap-1.jpg",
+        "image": "../../img/Bitmap-1.jpg",
         "isInCart": "",
         "article": "2"
     },
@@ -21,7 +21,7 @@
         "name": "Стул Lars желтый пластик Ш.48 В.83 Г.56 Вес 5.5кг",
         "price": "17320",
         "discount": "10",
-        "image": "../../pics/Bitmap-2.jpg",
+        "image": "../../img/Bitmap-2.jpg",
         "isInCart": "",
         "article": "3"
     },
@@ -30,7 +30,7 @@
         "name": "Стул Lars желтый пластик Ш.48 В.83 Г.56 Вес 5.5кг",
         "price": "11237320",
         "discount": "15",
-        "image": "../../pics/Bitmap-3.jpg",
+        "image": "../../img/Bitmap-3.jpg",
         "isInCart": "",
         "article": "4"
     },
@@ -39,7 +39,7 @@
         "name": "Стул Lars желтый пластик Ш.48 В.83 Г.56 Вес 5.5кг",
         "price": "7320",
         "discount": "70",
-        "image": "../../pics/Bitmap-4.jpg",
+        "image": "../../img/Bitmap-4.jpg",
         "isInCart": "",
         "article": "5"
     },
@@ -48,7 +48,7 @@
         "name": "Стул Lars желтый пластик Ш.48 В.83 Г.56 Вес 5.5кг",
         "price": "7320",
         "discount": "0",
-        "image": "../../pics/Bitmap-5.jpg",
+        "image": "../../img/Bitmap-5.jpg",
         "isInCart": "",
         "article": "6"
     },
@@ -58,7 +58,7 @@
         "name": "Стул Lars желтый пластик Ш.48 В.83 Г.56 Вес 5.5кг",
         "price": "7320",
         "discount": "0",
-        "image": "../../pics/Bitmap-6.jpg",
+        "image": "../../img/Bitmap-6.jpg",
         "isInCart": "",
         "article": "7"
     },
@@ -67,7 +67,7 @@
         "name": "Стул Lars желтый пластик Ш.48 В.83 Г.56 Вес 5.5кг",
         "price": "7320",
         "discount": "0",
-        "image": "../../pics/Bitmap-7.jpg",
+        "image": "../../img/Bitmap-7.jpg",
         "isInCart": "",
         "article": "8"
     }

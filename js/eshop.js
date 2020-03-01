@@ -38,15 +38,15 @@
                 out += data[key]["name"];
                 out += '</div>';
                 out += '<div class="stars">';
-                out += '<img src=../../pics/starFull.png>';
+                out += '<img src=../../img/starFull.png>';
                 out += '</img>';
-                out += '<img src=../../pics/starFull.png>';
+                out += '<img src=../../img/starFull.png>';
                 out += '</img>';
-                out += '<img src=../../pics/starFull.png>';
+                out += '<img src=../../img/starFull.png>';
                 out += '</img>';
-                out += '<img src=../../pics/starFull.png>';
+                out += '<img src=../../img/starFull.png>';
                 out += '</img>';
-                out += '<img src=../../pics/star.png>';
+                out += '<img src=../../img/star.png>';
                 out += '</img>';
                 out += ' 123К отзывов'
                 out += '</div>';
@@ -57,7 +57,6 @@
                 out += '</div>';
             }
             localStorage.setItem('data', JSON.stringify(data));
-            console.log(localStorage.getItem('data'));
             $('.main').html(out);
             script();
         })
@@ -66,7 +65,6 @@
 }())
 
 function loadcarts() {
-    console.log('Eto function goods');
     let out = '';
     let summa = 0;
     let discount = 0;
@@ -75,10 +73,12 @@ function loadcarts() {
         if (Number(key) > 0) {
             document.querySelector(".counter").style.display = 'initial';
             let data = JSON.parse(localStorage.getItem(key));
-            console.log(data.price);
             out += '<div class = carts id=' + data.article + '>';
             out += '<div class = cartsInfo>';
+            out += '<label class="container">'
             out += '<input type="checkbox" id=' + data.article + ' checked="checked">';
+            out += '<span class="checkmark"></span>';
+            out += '</label>'
             out += '<div class = "image-container" style="background: url(' + data.image + '); background-size: contain; background-repeat: no-repeat;">';
             out += '</div>';
             out += '<label class="name-container" for ="' + data.article + '">';
@@ -101,6 +101,7 @@ function loadcarts() {
             }
             out += '</div>';
             out += '</div>';
+            out += '<hr style="background: rgba(0, 26, 52, 0.163844)";>';
         }
     }
 
@@ -158,41 +159,17 @@ function clearCart() {
         $('.objects').hide();
         $('.header .title').css('width', '500px');
         $('.cartSelect').hide();
-        $('.finalOrder').html('<div class="orderTitle" style="text-align: center; position: initial; padding-top: 50px">Вы не добавили в корзину ни один товар. Воспользуйтесь каталогом, чтобы найти всё что нужно.</div><a href="/src/html/index.html"><input type="submit" value="Начать покупки" class="catalogButton"></input></a>');
+        $('hr').hide();
+        $('.finalOrder').html('<div class="orderTitle" style="text-align: center; position: initial; padding-top: 50px">Вы не добавили в корзину ни один товар. Воспользуйтесь каталогом, чтобы найти всё что вам нужно.</div><a href="/html/index.html"><input type="submit" value="Начать покупки" class="catalogButton"></input></a>');
         $('.orderTitle').css({
             'width': '100%',
             'margin-top': '50px'
         });
     }
 }
-// function sumCalc() {
-//     let numTimes = localStorage.getItem("counter");
-//     if (numTimes == null) {
-//         numTimes = 0;
-//     } else {
-//         numTimes = parseInt(numTimes, 10);
-//     }
-//     let checkboxes = document.querySelectorAll('input[type="checkbox"]');
-//     let summa = 0;
-//     let counter = 0;
-//     for (let checkbox of checkboxes) {
-//         let data = JSON.parse(localStorage.getItem(checkbox.getAttribute('id')));
-//         console.log(data);
-//         if (!(checkbox.hasAttribute('checked'))) {
-//             localStorage.removeItem(checkbox.getAttribute('id'));
-//             numTimes--;
-//             localStorage.setItem("counter", (numTimes).toString(10));
-//             document.querySelector(".counter").textContent = localStorage.getItem('counter');
-//             console.log(counter);
-//             localStorage.setItem('counter', counter);
-
-//         }
-//     }
-// }
 
 function check() {
     let checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    console.log(checkboxes);
     for (let checkbox of checkboxes) {
         checkbox.addEventListener('change', function () {
             if (this.checked) {
@@ -202,19 +179,15 @@ function check() {
                     localStorage.setItem('counter', (parseFloat(localStorage.getItem('counter')) + 1));
                     document.querySelector(".counter").textContent = localStorage.getItem('counter');
                     let data = JSON.parse(localStorage.getItem('data'))[checkbox.getAttribute('id')];
-                    console.log(data);
                     let summa = (parseFloat(document.querySelector('.summa').textContent) + parseFloat(data.price)).toFixed(2);
-                    console.log(parseFloat(document.querySelector('.discountSumText').textContent));
                     let discount = ((parseFloat(document.querySelector('.discountSumText').textContent) + parseFloat(parseFloat(data.price) / 100 * data.discount)).toFixed(2));
                     document.querySelector('.discountSumText').textContent = discount + ' ₽';
                     document.querySelector('.summa').textContent = summa + ' ₽';
                     document.querySelector('.generalSum-summa').textContent = summa - discount + ' ₽';
                     if (parseFloat(localStorage.getItem('counter')) == 0) {
                         document.querySelector(".counter").style.display = 'none';
-                        console.log('Ravno nulu');
                     }
                     if (parseFloat(localStorage.getItem('counter')) !== 0) {
-                        console.log('Ne ravno nulu');
                         document.querySelector(".counter").style.display = 'block';
                     }
                     script();
@@ -244,46 +217,164 @@ function check() {
     }
 };
 
-document.querySelector('.delete').addEventListener('click', function () {
-    let checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    for (let checkbox of checkboxes) {
-        if (checkbox.getAttribute('checked')) {
-            $('div#' + checkbox.getAttribute('id')).remove();
-            localStorage.removeItem(checkbox.getAttribute('id'));
-            clearCart();
-        }
-    }
-    localStorage.setItem('counter', 0);
-    document.querySelector(".counter").textContent = localStorage.getItem('counter');
-    if (parseFloat(localStorage.getItem('counter')) == 0) {
-        document.querySelector(".counter").style.display = 'none';
-    }
-    if (parseFloat(localStorage.getItem('counter')) !== 0) {
-        document.querySelector(".counter").style.display = 'block';
-    }
-    document.querySelector('.summa').textContent = parseFloat(0).toFixed(2) + ' ₽';
-    document.querySelector('.discountSumText').textContent = parseFloat(0).toFixed(2) + ' ₽';
-    document.querySelector('.generalSum-summa').textContent = parseFloat(0).toFixed(2) + ' ₽';
-    document.querySelector(".counter").textContent = localStorage.getItem('counter');
-
-})
-
-document.querySelector('#checkAll').addEventListener('change', function () {
-    let checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    if (this.checked) {
-        this.setAttribute('checked', 'checked');
+if (document.querySelector('.delete')) {
+    document.querySelector('.delete').addEventListener('click', function () {
+        let checkboxes = document.querySelectorAll('input[type="checkbox"]');
         for (let checkbox of checkboxes) {
-            if (!checkbox.hasAttribute('checked')) {
-                checkbox.click();
+            if (checkbox.getAttribute('checked')) {
+                $('div#' + checkbox.getAttribute('id')).remove();
+                localStorage.removeItem(checkbox.getAttribute('id'));
+                clearCart();
             }
         }
+        localStorage.setItem('counter', 0);
+        document.querySelector(".counter").textContent = localStorage.getItem('counter');
+        if (parseFloat(localStorage.getItem('counter')) == 0) {
+            document.querySelector(".counter").style.display = 'none';
+        }
+        if (parseFloat(localStorage.getItem('counter')) !== 0) {
+            document.querySelector(".counter").style.display = 'block';
+        }
+        document.querySelector('.summa').textContent = parseFloat(0).toFixed(2) + ' ₽';
+        document.querySelector('.discountSumText').textContent = parseFloat(0).toFixed(2) + ' ₽';
+        document.querySelector('.generalSum-summa').textContent = parseFloat(0).toFixed(2) + ' ₽';
+        document.querySelector(".counter").textContent = localStorage.getItem('counter');
+
+    })
+}
+
+if (document.querySelector('#checkAll')){
+    document.querySelector('#checkAll').addEventListener('change', function () {
+        let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        if (this.checked) {
+            this.setAttribute('checked', 'checked');
+            for (let checkbox of checkboxes) {
+                if (!checkbox.hasAttribute('checked')) {
+                    checkbox.click();
+                }
+            }
+        } else {
+            this.removeAttribute('checked');
+            for (let checkbox of checkboxes) {
+                if (checkbox.hasAttribute('checked')) {
+                    checkbox.click();
+                }
+            }
+        }
+    
+    })
+}
+
+
+function script() {
+    let numTimes = localStorage.getItem("counter");
+    if (numTimes == null) {
+        numTimes = 0;
     } else {
-        this.removeAttribute('checked');
-        for (let checkbox of checkboxes) {
-            if (checkbox.hasAttribute('checked')) {
-                checkbox.click();
-            }
-        }
+        numTimes = parseInt(numTimes, 10);
     }
 
-})
+    document.querySelector(".counter").textContent = localStorage.getItem('counter');
+    let num = parseFloat(numTimes % 10);
+    switch (num) {
+        case (0):
+            document.querySelector(".objects").textContent = localStorage.getItem('counter') + ' товаров';
+            if (document.querySelector(".orderPrice .goods") != null) {
+                document.querySelector(".orderPrice .goods").textContent = localStorage.getItem('counter') + ' товаров на сумму';
+            }
+            break;
+        case (1):
+            document.querySelector(".objects").textContent = localStorage.getItem('counter') + ' товар';
+            if (document.querySelector(".orderPrice .goods") != null) {
+                document.querySelector(".orderPrice .goods").textContent = localStorage.getItem('counter') + ' товар на сумму';
+            }
+            break;
+        case (2):
+            document.querySelector(".objects").textContent = localStorage.getItem('counter') + ' товара';
+            if (document.querySelector(".orderPrice .goods") != null) {
+                document.querySelector(".orderPrice .goods").textContent = localStorage.getItem('counter') + ' товара на сумму';
+            }
+            break;
+        case (3):
+            document.querySelector(".objects").textContent = localStorage.getItem('counter') + ' товара';
+            if (document.querySelector(".orderPrice .goods") != null) {
+                document.querySelector(".orderPrice .goods").textContent = localStorage.getItem('counter') + ' товара на сумму';
+            }
+            break;
+        case (4):
+            document.querySelector(".objects").textContent = localStorage.getItem('counter') + ' товара';
+            if (document.querySelector(".orderPrice .goods") != null) {
+                document.querySelector(".orderPrice .goods").textContent = localStorage.getItem('counter') + ' товара на сумму';
+            }
+            break;
+        case (5):
+            document.querySelector(".objects").textContent = localStorage.getItem('counter') + ' товаров';
+            if (document.querySelector(".orderPrice .goods") != null) {
+                document.querySelector(".orderPrice .goods").textContent = localStorage.getItem('counter') + ' товаров на сумму';
+            }
+            break;
+        case (6):
+            document.querySelector(".objects").textContent = localStorage.getItem('counter') + ' товаров';
+            if (document.querySelector(".orderPrice .goods") != null) {
+                document.querySelector(".orderPrice .goods").textContent = localStorage.getItem('counter') + ' товаров на сумму';
+            }
+            break;
+        case (7):
+            document.querySelector(".objects").textContent = localStorage.getItem('counter') + ' товаров';
+            if (document.querySelector(".orderPrice .goods") != null) {
+                document.querySelector(".orderPrice .goods").textContent = localStorage.getItem('counter') + ' товаров на сумму';
+            }
+            break;
+        case (8):
+            document.querySelector(".objects").textContent = localStorage.getItem('counter') + ' товаров';
+            if (document.querySelector(".orderPrice .goods") != null) {
+                document.querySelector(".orderPrice .goods").textContent = localStorage.getItem('counter') + ' товаров на сумму';
+            }
+            break;
+        case (9):
+            document.querySelector(".objects").textContent = localStorage.getItem('counter') + ' товаров';
+            if (document.querySelector(".orderPrice .goods") != null) {
+                document.querySelector(".orderPrice .goods").textContent = localStorage.getItem('counter') + ' товаров на сумму';
+            }
+            break;
+        default:
+            break;
+    }
+
+    let buttons = document.querySelectorAll(".buttonContainer button");
+    for (let button of buttons) {
+        if (localStorage.getItem(button.getAttribute('id')) != null) {
+            button.textContent = 'В корзине';
+            button.style.color = '#005BFF';
+            button.style.background = '#F2F3F5';
+        }
+        button.addEventListener('click', (event) => {
+            if (event.target.textContent == 'В корзину') {
+                event.target.textContent = 'В корзине';
+                numTimes++;
+                localStorage.setItem("counter", (numTimes).toString(10));
+                document.querySelector(".counter").textContent = localStorage.getItem('counter');
+                event.target.style.color = '#005BFF';
+                event.target.style.background = '#F2F3F5';
+
+                let data = JSON.parse(localStorage.getItem("data"));
+                localStorage.setItem(event.target.getAttribute('id'), JSON.stringify(data[event.target.getAttribute('id')]));
+                if (document.querySelector(".counter").textContent != '0') {
+                    document.querySelector(".counter").style.display = 'initial';
+                }
+            } else if (event.target.textContent == 'В корзине') {
+                event.target.textContent = 'В корзину';
+                numTimes--;
+                localStorage.setItem("counter", (numTimes).toString(10));
+                localStorage.removeItem(event.target.getAttribute('id'));
+                document.querySelector(".counter").textContent = localStorage.getItem('counter');
+                event.target.style.color = '#FFFFFF';
+                event.target.style.background = '#005BFF';
+                if (document.querySelector(".counter").textContent == '0') {
+                    document.querySelector(".counter").style.display = 'none';
+                }
+            }
+
+        })
+    }
+}
