@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Simple Transactional Email</title>
+    
+<style>img {
+border: none; -ms-interpolation-mode: bicubic; max-width: 100%;
+}
+body {
+font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+}
+.ExternalClass {
+width: 100%;
+}
+.ExternalClass {
+line-height: 100%;
+}
+.btn-primary table td:hover {
+background-color: #34495e !important;
+}
+.btn-primary a:hover {
+background-color: #34495e !important; border-color: #34495e !important;
+}
+@media only screen and (max-width: 620px) {
+  table[class=body] h1 {
+    font-size: 28px !important; margin-bottom: 10px !important;
+  }
+  table[class=body] p {
+    font-size: 16px !important;
+  }
+  table[class=body] ul {
+    font-size: 16px !important;
+  }
+  table[class=body] ol {
+    font-size: 16px !important;
+  }
+  table[class=body] td {
+    font-size: 16px !important;
+  }
+  table[class=body] span {
+    font-size: 16px !important;
+  }
+  table[class=body] a {
+    font-size: 16px !important;
+  }
+  table[class=body] .wrapper {
+    padding: 10px !important;
+  }
+  table[class=body] .article {
+    padding: 10px !important;
+  }
+  table[class=body] .content {
+    padding: 0 !important;
+  }
+  table[class=body] .container {
+    padding: 0 !important; width: 100% !important;
+  }
+  table[class=body] .main {
+    border-left-width: 0 !important; border-radius: 0 !important; border-right-width: 0 !important;
+  }
+  table[class=body] .btn table {
+    width: 100% !important;
+  }
+  table[class=body] .btn a {
+    width: 100% !important;
+  }
+  table[class=body] .img-responsive {
+    height: auto !important; max-width: 100% !important; width: auto !important;
+  }
+}
+</style>
+</head>
+
+<body class="" style="font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+    <span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">This is preheader text. Some clients will show this text as a preview.</span>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+        <tr>
+            <td style="font-family: sans-serif; font-size: 14px;" valign="top"> </td>
+            <td class="container" style="font-family: sans-serif; font-size: 14px; display: block; max-width: 600px; width: 600px; margin: 0; padding: 10px;" valign="top">
+                <div class="content" style="box-sizing: border-box; display: block; max-width: 600px; margin: 0 auto; padding: 0px;">
+
+                    <!-- START CENTERED WHITE CONTAINER -->
+                    <table role="presentation" class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; border-radius: 3px;">
+
+                        <!-- START MAIN CONTENT AREA -->
+                        <tr>
+                            <td class="wrapper" style="font-family: sans-serif; font-size: 14px; box-sizing: border-box; padding: 0px;" valign="top">
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                    <tr>
+                                        <td style="font-family: sans-serif; font-size: 14px;" valign="top">
+                                            <p style="position: absolute; left: 24px; top: 8px; width: 200px; height: 16px; font-style: normal; font-weight: normal; font-size: 12px; line-height: 16px; display: flex; letter-spacing: 0.4px; color: #99a3ad; font-family: sans-serif; margin: 0 0 15px 0px;">
+                                            Только до ХХ месяц 2019 года</p>
+                                            <p style="position: absolute; width: 123.81px; height: 27.01px; left: 24px; top: 56px; font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;"><img src="https://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/ozon.png" style="-ms-interpolation-mode: bicubic; max-width: 100%; border: none;"></p>
+                                            <p style="letter-spacing: 0.4px; width: 100%; height: 18px; font-style: normal; font-weight: 300; font-size: 12px; line-height: 14px; font-family: sans-serif; margin: 30px 0 0;" align="right"><a style="color: #025bff; text-decoration: none;">
+                                                Web-версия письма</a></p>
+                                        <p style="width: 100%; height: 20px; font-style: normal; font-weight: 300; font-size: 16px; line-height: 20px; letter-spacing: 0.4px; color: #001a34; font-family: sans-serif; margin: 0 0 15px;" align="right">
+                                            Ваши баллы: 200</p>
+                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin-top: 50px; border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td align="left" style="font-family: sans-serif; font-size: 14px;" valign="top">
+                                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td style="font-family: sans-serif; font-size: 14px;" valign="top">  <span style="display: inline-block; height: 88px; width: 144px; background-image: url('https://ci5.googleusercontent.com/proxy/mxPZTNNC4Cfqt8EJQ_Lgf1w71n6eL8U1r3clcZHy1Qp5pJWkFhXCVCKvVW5Ly3O0386a7REBV45J6YmqN5lF_W3R2e1v0TTTqga0R9IiZeHpbwVKJ-XQjh_UrDQYVvpZPJjVj0ko_3EcuI1nUTLq9ZkXGUkE3WVN_KRxgsbg5FyvlkDbk1eLAFkHTxsR7cQUnIDt6qnDwGB3feE7ZGPjvJQgwg=s0-d-e1-ft#https://raw.githubusercontent.com/Fog314/Fog314.github.io/masterhttps://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/svg13.png');">
+                                                                        </span>
+                                                                        <span style="display: inline-block; height: 88px; width: 144px; background-image: url('https://ci4.googleusercontent.com/proxy/n6yVwYic1D5DFww41IUYJG6iICxbbnTtfaLERMQQdGOoN4s6vY4ulDEmvdxs27iVq16poclT9hhiroG4Uyx9d1QxRPs6N9UWKgQhSBVoWqyWKQ9Y60C7WmfcYJJ6hflAg1Bgbyymsb8ZgY_tnwZiHqTkV7sqZZrjehKnJ6RsI12qTo3bvtW8UvlKDRgA3wEcgmfP0MDcCsIl8fkUC6eNznlFXQ=s0-d-e1-ft#https://raw.githubusercontent.com/Fog314/Fog314.github.io/masterhttps://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/svg14.png');">
+                                                                        </span>
+                                                                        <span style="display: inline-block; height: 88px; width: 124px; background-image: url('https://ci4.googleusercontent.com/proxy/UVOFxVzeQW2VpHMlT_yC9-GzT62vExD6QdSbONnA9j98q8aXuy3r1wN6Rp10AQk5pIUzVF0i2xWwsiFIYQ8YWthwBQm7ypwAqwi-C4jWmjLvSwGpjpl1hvkf5Yx7i9PscNQPQjzC2Ot-NfpfKiXD0v_yMX-CawhHW1ox8aF9bwZ8J4lakBGaN9vFOun_Dg_H4IiHR83QlHNu3FLtbdhC5M0mIg=s0-d-e1-ft#https://raw.githubusercontent.com/Fog314/Fog314.github.io/masterhttps://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/svg15.png');">
+                                                                        </span>
+                                                                        <span style="display: inline-block; height: 88px; width: 144px; background-image: url('https://ci3.googleusercontent.com/proxy/pRa6nCViGb_wnky32zW6Z1FkZLu8KGU7FEgPVcD6rPdIJFtIdJRAoZH6x-NL4iSzVHFPS-6tmyulmsVoPmwCDGL0NQC2CJhTljsLsqq7OAtu9BwnLS5JSG0bJ6JO08YVjjSnhHk_s5McJGKO_VGeWYIZlFzWv6htg3sNvIqZl2F7KJHaDR64srcVteaP95w5_GRsa5kLEwXrdFaEo3Cw-_CaBg=s0-d-e1-ft#https://raw.githubusercontent.com/Fog314/Fog314.github.io/masterhttps://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/svg16.png');">
+                                                                        </span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p style="display: inline-block; width: 300px; font-style: normal; font-weight: 500; font-size: 22px; line-height: 32px; letter-spacing: 0.1px; color: #001a34; font-family: sans-serif; margin: 0 0 15px;">
+                                                Заказ оформлен
+                                        </p>
+                                            <p style="font-style: normal; font-weight: 300; font-size: 16px; line-height: 24px; color: #001a34; font-family: sans-serif; margin: 0 0 15px;">Здравствуйте, {{Name}}.</p>
+                                            <p style="font-style: normal; font-weight: 300; font-size: 16px; line-height: 24px; color: #001a34; font-family: sans-serif; margin: 0 0 15px;">Мы оповестим вас, когда статус заказа изменится.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <!-- END MAIN CONTENT AREA -->
+                    </table>
+
+                    <table role="presentation" class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; border-radius: 3px;">
+
+                        <!-- START MAIN CONTENT AREA -->
+                        <tr>
+                            <td class="wrapper" style="font-family: sans-serif; font-size: 14px; box-sizing: border-box; padding: 0px;" valign="top">
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                    <tr>
+                                        <td style="font-family: sans-serif; font-size: 14px;" valign="top">
+                                            <span style="display: inline-block; width: 160px; height: 159px; color: #667585;">
+                                                <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;">Номер заказа:</p>
+                                                <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;">Адрес доставки: </p>
+                                                <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;">Получатель: </p>
+                                                <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;">Способ доставки: </p>
+                                                <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;"> Способ оплаты: </p>
+                                            </span>
+                                            <span style="display: inline-block; width: 362px; height: 119px; color: #001a34;">
+                                                <p style="color: #216bff; font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;">11234567</p>
+                                                <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;">г. Москва, Гурьянова дом 8 корпус 1, кв. 310</p>
+                                                <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;">Альбина Петровна</p>
+                                                <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;">курьером</p>
+                                                <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;">карта</p>
+                                            </span>
+                                            <p style="width: 226px; height: 20px; left: 22px; top: 485px; font-style: normal; font-weight: 600; font-size: 16px; line-height: 20px; color: #172133; font-family: sans-serif; margin: 26px 0 0;">Упаковка 1</p>
+                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin-top: 30px; width: 576px; border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td align="left" style="font-family: sans-serif; font-size: 14px;" valign="top">
+                                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="box-sizing: border-box; border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; padding: 10px; border: 0.5px solid #808c99;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td style="width: 76px; font-family: sans-serif; font-size: 14px;" valign="top">
+                                                                            <span style="width: 76px; height: 74px;">
+                                                                            <img width="76px" heigh="76px" src="https://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/Bitmap.jpg" style="-ms-interpolation-mode: bicubic; max-width: 100%; border: none;">
+                                                                            </span>
+                                                                        </td>
+                                                                        <td style="font-family: sans-serif; font-size: 14px; padding: 15px 0px 0px 30px;" valign="top">
+                                                                            <span style="width: 100px; height: 66px; font-style: normal; font-weight: 300; font-size: 16px; line-height: 22px; color: #216bff;">Organic
+                                                                            Shop Китчен Скраб для рук питательный "Ежевика", 100 мл 130 гр.
+                                                                        </span>
+                                                                        </td>
+                                                                            <td style="font-family: sans-serif; font-size: 14px;" valign="top">
+                                                                                
+                                                                            <span style="display: block; margin-right: 10px; width: 150px; height: 18px; font-style: normal; font-weight: 600; font-size: 14px; line-height: 18px; text-align: right; color: #172133;">852,20
+                                                                                ₽
+                                                                            </span>
+                                                                            <span style="display: block; margin-left: 55px; width: 92px; height: 18px; font-style: normal; font-weight: normal; font-size: 14px; line-height: 18px; text-align: right; color: #808c99;">4
+                                                                                шт.</span>
+                                                                                <span style="display: block; margin-left: 55px; width: 92px; height: 18px; font-style: normal; font-weight: normal; font-size: 14px; line-height: 18px; text-align: right; color: #808c99;">218,80
+                                                                                ₽</span>
+                                                                        </td>
+                                                                        
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin-top: 30px; width: 576px; border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td align="left" style="font-family: sans-serif; font-size: 14px;" valign="top">
+                                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="box-sizing: border-box; border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; padding: 10px; border: 0.5px solid #808c99;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td style="width: 76px; font-family: sans-serif; font-size: 14px;" valign="top">
+                                                                            <span style="width: 76px; height: 74px;">
+                                                                            <img width="76px" heigh="76px" src="https://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/Bitmap-2.jpg" style="-ms-interpolation-mode: bicubic; max-width: 100%; border: none;">
+                                                                            </span>
+                                                                        </td>
+                                                                        <td style="font-family: sans-serif; font-size: 14px; padding: 15px 0px 0px 30px;" valign="top">
+                                                                            <span style="width: 100px; height: 66px; font-style: normal; font-weight: 300; font-size: 16px; line-height: 22px; color: #216bff;">Organic
+                                                                            Shop Китчен Скраб для рук питательный "Ежевика", 100 мл 130 гр.
+                                                                        </span>
+                                                                        </td>
+                                                                            <td style="font-family: sans-serif; font-size: 14px;" valign="top">
+                                                                                
+                                                                            <span style="display: block; margin-right: 10px; width: 150px; height: 18px; font-style: normal; font-weight: 600; font-size: 14px; line-height: 18px; text-align: right; color: #172133;">852,20
+                                                                                ₽
+                                                                            </span>
+                                                                            <span style="display: block; margin-left: 55px; width: 92px; height: 18px; font-style: normal; font-weight: normal; font-size: 14px; line-height: 18px; text-align: right; color: #808c99;">4
+                                                                                шт.</span>
+                                                                                <span style="display: block; margin-left: 55px; width: 92px; height: 18px; font-style: normal; font-weight: normal; font-size: 14px; line-height: 18px; text-align: right; color: #808c99;">218,80
+                                                                                ₽</span>
+                                                                        </td>
+                                                                        
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="margin-left: -15px; margin-top: 24px; border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; box-sizing: border-box;">
+                                                <tbody>
+                                                  <tr>
+                                                    <td align="center" style="font-family: sans-serif; font-size: 14px; padding-bottom: 15px;" valign="top">
+                                                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;">
+                                                        <tbody>
+                                                          <tr>
+                                                            <td style="font-family: sans-serif; font-size: 14px; border-radius: 5px;" align="center" bgcolor="#005BFF" valign="top"> <a href="http://htmlemail.io" target="_blank" style="color: #ffffff; text-decoration: none; background-color: #005BFF; border-radius: 4px; box-sizing: border-box; cursor: pointer; display: inline-block; font-size: 18px; text-transform: capitalize; margin: 0; padding: 12px 24px; border: 1px solid #3498db;">Отслеживать заказ</a> </td>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+
+                                              <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin-top: 14px; margin-left: 0px; border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                                <tbody>
+                                                  <tr>
+                                                    <td align="left" style="font-family: sans-serif; font-size: 14px;" valign="top">
+                                                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                                        <tbody>
+                                                          <tr>
+                                                            <span style="height: 29px; font-style: normal; font-weight: 300; font-size: 16px; line-height: 29px; color: #0060ff;">
+                                                            Перейти на сайт в раздел «Помощь»
+                                                        </span><br>
+                                                        <span style="height: 20px; font-style: normal; font-weight: 300; font-size: 16px; line-height: 40px; color: #172133;">
+                                                            Команда Ozon
+                                                        </span>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                              <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin-top: 18px; margin-left: 0px; border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                                <tbody>
+                                                  <tr>
+                                                    <td align="left" style="font-family: sans-serif; font-size: 14px;" valign="top">
+                                                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                                        <tbody>
+                                                          <tr>
+                                                            <span style="display: inline-block; width: 96px; height: 88px; background-image: url('https://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/svg1.png');">
+                                                        </span>
+                                                        <span style="display: inline-block; width: 96px; height: 88px; background-image: url('https://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/svg2.png');">
+                                                        </span>
+                                                        <span style="display: inline-block; width: 96px; height: 88px; background-image: url('https://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/svg3.png');">
+                                                        </span>
+                                                        <span style="display: inline-block; width: 96px; height: 88px; background-image: url('https://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/svg4.png');">
+                                                        </span>
+                                                        <span style="display: inline-block; width: 96px; height: 88px; background-image: url('https://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/svg5.png');">
+                                                        </span>
+                                                        <span style="display: inline-block; width: 96px; height: 88px; background-image: url('https://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/svg6.png');">
+                                                        </span>
+                                                        <span style="display: inline-block; width: 96px; height: 88px; background-image: url('https://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/svg7.png');">
+                                                        </span>
+                                                        <span style="display: inline-block; width: 96px; height: 88px; background-image: url('https://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/svg8.png');">
+                                                        </span>
+                                                        <span style="display: inline-block; width: 96px; height: 88px; background-image: url('https://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/svg9.png');">
+                                                        </span>
+                                                        <span style="display: inline-block; width: 96px; height: 88px; background-image: url('https://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/svg10.png');">
+                                                        </span>
+                                                        <span style="display: inline-block; width: 96px; height: 88px; background-image: url('https://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/svg11.png');">
+                                                        </span>
+                                                        <span style="display: inline-block; width: 96px; height: 88px; background-image: url('https://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/svg12.png');">
+                                                        </span>
+                    
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                    </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin-top: 0px; margin-left: 20px; width: 545px; height: 86px; font-style: normal; font-weight: normal; font-size: 10px; line-height: 16px; color: #808d9a; border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                                        <tbody>
+                                                          <tr>
+                                                            <td align="left" style="font-family: sans-serif; font-size: 14px;" valign="top">
+                                                              <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                                                <tbody>
+                                                                  <tr>
+                                                                    <span style="height: 29px; width: 545px; font-size: 10px;">
+                                                                        Примечание: Цены и скидки предоставляются на товары, указанные в настоящей
+                                                                        рассылке, и действительны на момент отправки данного письма. Настоящая рассылка
+                                                                        не является офертой. Актуальная информация
+                                                                        о цене и наличии товара представлена <a href="http://ozon.ru" style="color: #005bff; text-decoration: none;" target="_blank" data-saferedirecturl="https://www.google.com/url?q=http://ozon.ru&amp;source=gmail&amp;ust=1583096809988000&amp;usg=AFQjCNH11oU6p-30OphTOImD3TnlFKrjuA">на
+                                                                            сайте Ozon</a>. Действие скидок не распространяется на товары
+                                                                        по «специальной цене». С более подробной информацией о действии скидок Вы можете
+                                                                        ознакомиться <a href="http://ozon.ru" style="color: #005bff; text-decoration: none;" target="_blank" data-saferedirecturl="https://www.google.com/url?q=http://ozon.ru&amp;source=gmail&amp;ust=1583096809988000&amp;usg=AFQjCNH11oU6p-30OphTOImD3TnlFKrjuA">здесь</a>.
+                                                                        <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;"></p>
+                                                                        Вы получили это письмо, потому что зарегистрированы на сайте Ozon. Данное письмо
+                                                                        не требует ответа.
+                                                                    </span>
+                                                                  </tr>
+                                                                </tbody>
+                                                              </table>
+                                                            </td>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin-top: 40px; margin-left: 30px; width: 545px; height: 66px; font-style: normal; font-weight: normal; font-size: 10px; line-height: 16px; color: #808d9a; border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                                        <tbody>
+                                                          <tr>
+                                                            <td align="center" style="font-family: sans-serif; font-size: 14px;" valign="top">
+                                                              <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                                                <tbody>
+                                                                  <tr>
+                                                                      <td>
+                                                                        <span style="display: inline-block; margin-right: 38px;">
+                                                                            <img src="https://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/apple.png" style="-ms-interpolation-mode: bicubic; max-width: 100%; border: none;">
+                                                                        </span>
+                                                                      </td>
+                                                                   
+                                                                      <td>
+                                                                        <span style="display: inline-block; margin-right: 38px;">
+                                                                            <img src="https://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/android.png" style="-ms-interpolation-mode: bicubic; max-width: 100%; border: none;">
+                                                                        </span>
+                                                                      </td>
+                                                                      <td>
+                                                                        <span style="display: inline-block; margin-right: 38px;">
+                                                                            <img src="https://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/vk.png" style="-ms-interpolation-mode: bicubic; max-width: 100%; border: none;">
+                                                                        </span>
+                                                                      </td>
+                                                                      <td>
+                                                                        <span style="display: inline-block; margin-right: 38px;">
+                                                                            <img src="https://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/instagram.png" style="-ms-interpolation-mode: bicubic; max-width: 100%; border: none;">
+                                                                        </span>
+                                                                      </td>
+                                                                      <td>
+                                                                        <span style="display: inline-block; margin-right: 38px;">
+                                                                            <img src="https://raw.githubusercontent.com/Fog314/Fog314.github.io/master/pics/facebookNew.png" style="-ms-interpolation-mode: bicubic; max-width: 100%; border: none;">
+                                                                        </span>
+                                                                      </td>
+                                                                  </tr>
+                                                                </tbody>
+                                                              </table>
+                                                            </td>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin-top: 0px; margin-left: 71px; width: 545px; height: 26px; font-style: normal; font-weight: normal; font-size: 10px; line-height: 16px; color: #808d9a; border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                                        <tbody>
+                                                          <tr>
+                                                            <td align="left" style="font-family: sans-serif; font-size: 14px;" valign="top">
+                                                              <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                                                <tbody>
+                                                                  <tr>
+                                                                    <td style="font-family: sans-serif; font-size: 14px;" valign="top">
+                                                                        <span style="width: 470px; font-weight: normal; font-size: 10px; line-height: 16px; color: #005df6;">
+                                                                            Политика ООО «Интернет Решения» в отношении обработки персональных данных
+                                                                        </span>
+                                                                    </td>
+                                                                  </tr>
+                                                                </tbody>
+                                                              </table>
+                                                            </td>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                      <div class="footer" style="clear: both; margin-top: 10px; width: 100%;">
+                                                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin-top: 10px; margin-left: -10px; width: 545px; height: 16px; font-style: normal; font-weight: normal; font-size: 10px; line-height: 16px; color: #808d9a; border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                                        <tbody>
+                                                          <tr>
+                                                            <td align="left" style="font-family: sans-serif; font-size: 12px; color: #999999;" valign="top">
+                                                              <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                                                <tbody>
+                                                                  <tr>
+                                                                    <td style="font-family: sans-serif; font-size: 12px; color: #999999;" align="center" valign="top">
+                                                                        <span style="margin-right: 24px; width: 124px; height: 16px; font-style: normal; font-weight: normal; font-size: 10px; line-height: 16px; color: #005df6; text-align: center;">
+                                                                            Отписаться от рассылки
+                                                                        </span>
+                                                                        <span style="margin-right: 26px; width: 82px; height: 16px; font-style: normal; font-weight: normal; font-size: 10px; line-height: 16px; text-align: center; color: #005df6;">
+                                                                            Обратная связь
+                                                                        </span>
+                                                                        <span style="width: 38px; height: 12px; font-style: normal; font-weight: normal; font-size: 10px; line-height: 16px; text-align: center; color: #005df6;">
+                                                                            Помощь
+                                                                        </span>
+                                                                    </td>
+                                                                  </tr>
+                                                                </tbody>
+                                                              </table>
+                                                            </td>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                
+                                              </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+</td>
+                        </tr>
+                    </table>
+                
+            
+            <td> </td>
+        
+    
+</body>
+
+</html>
