@@ -142,7 +142,7 @@ function loadcarts() {
     out += 'Доступные способы и время доставки можно выбрать при оформлении заказа';
     out += '</div>';
     out += '<div class="getOrder-button">';
-    out += '<form action = reg.html><button type="submit">Оформить</button></form>';
+    out += '<form action = email.html><button type="submit">Оформить</button></form>';
     // out += '';
     out += '</div>';
     out += '</div>';
