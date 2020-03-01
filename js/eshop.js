@@ -20,17 +20,17 @@
                     out += '</div>';
                     out += '<div class="price-block">';
                     out += '<div class="currentPrice" style="display:inline-block; color: #F91155;">';
-                    out += (parseFloat(data[key]["price"]) - parseFloat(data[key]["price"]) / 100 * data[key]["discount"]).toFixed(2) + '₽';
+                    out += parseFloat(((data[key]["price"]) - (data[key]["price"]) / 100 * data[key]["discount"]).toFixed(2)).toLocaleString('ru-RU') + '₽';
                     out += '</div>';
                     out += '<div class="oldPrice" style="display:inline-block; margin-left: 5px; text-decoration: line-through; text-decoration-color: #F91155">';
-                    out += (parseFloat(data[key]["price"])).toFixed(2) + ' ₽';
+                    out += parseFloat((parseFloat(data[key]["price"])).toFixed(2)).toLocaleString('ru-RU') + ' ₽';
                     out += '</div>';
                     out += '</div>';
 
                 } else {
                     out += '<div class="price-block">';
                     out += '<div class="currentPrice">';
-                    out += (parseFloat(data[key]["price"])).toFixed(2) + ' ₽';
+                    out += parseFloat((parseFloat(data[key]["price"])).toFixed(2)).toLocaleString('ru-RU') + ' ₽';
                     out += '</div>';
                     out += '</div>';
                 }
@@ -90,14 +90,14 @@ function loadcarts() {
             if (data.discount != '0') {
                 discount = discount + parseFloat(data.price) / 100 * data.discount;
                 out += '<div class="currentPrice" style="display:inline-block; color: #F91155;">';
-                out += parseFloat(data.price) - parseFloat(data.price) / 100 * data.discount + ' ₽';
+                out += parseFloat((parseFloat(data.price) - parseFloat(data.price) / 100 * data.discount).toFixed(2)).toLocaleString('ru-RU') + ' ₽';
                 out += '</div><br>';
                 out += '<div class="oldPrice" style="display:inline-block; margin-left: 5px; text-decoration: line-through; text-decoration-color: #F91155; font-size: 12px">';
                 out += data.price + ' ₽';
                 out += '</div>';
                 out += '</div>';
             } else {
-                out += data.price + ' ₽';
+                out += parseFloat(parseFloat(data.price).toFixed(2)).toLocaleString('ru-RU') + ' ₽';
             }
             out += '</div>';
             out += '</div>';
@@ -113,7 +113,7 @@ function loadcarts() {
     out += '<div class="goods">';
     out += '</div>';
     out += '<div class="summa">';
-    out += summa + ' ₽';
+    out += parseFloat(summa.toFixed(2)).toLocaleString('ru-RU') + ' ₽';
     out += '</div>';
     out += '</div>';
     out += '<div class="orderDiscount">';
@@ -125,7 +125,7 @@ function loadcarts() {
     out += '- ';
     out += '</div>';
     out += '<div class="discountSumText" style="display: inline-block">'
-    out += discount.toFixed(2) + ' ₽';
+    out += parseFloat(parseFloat(discount).toFixed(2)).toLocaleString('ru-RU') + ' ₽';
     out += '</div>';
     out += '</div>';
     out += '</div>';
@@ -135,7 +135,7 @@ function loadcarts() {
     out += 'Общая стоимость'
     out += '</div>';
     out += '<div class="generalSum-summa">';
-    out += (parseFloat(summa - discount)).toFixed(2) + ' ₽';
+    out += parseFloat(parseFloat(summa - discount).toFixed(2)).toLocaleString('ru-RU') + ' ₽';
     out += '</div>';
     out += '</div>';
     out += '<div class="getOrder">';
@@ -144,7 +144,6 @@ function loadcarts() {
     out += '</div>';
     out += '<div class="getOrder-button">';
     out += '<form action = email.html><button type="submit">Оформить</button></form>';
-    // out += '';
     out += '</div>';
     out += '</div>';
     out += '</div>';
@@ -179,11 +178,11 @@ function check() {
                     localStorage.setItem('counter', (parseFloat(localStorage.getItem('counter')) + 1));
                     document.querySelector(".counter").textContent = localStorage.getItem('counter');
                     let data = JSON.parse(localStorage.getItem('data'))[checkbox.getAttribute('id')];
-                    let summa = (parseFloat(document.querySelector('.summa').textContent) + parseFloat(data.price)).toFixed(2);
-                    let discount = ((parseFloat(document.querySelector('.discountSumText').textContent) + parseFloat(parseFloat(data.price) / 100 * data.discount)).toFixed(2));
-                    document.querySelector('.discountSumText').textContent = discount + ' ₽';
-                    document.querySelector('.summa').textContent = summa + ' ₽';
-                    document.querySelector('.generalSum-summa').textContent = summa - discount + ' ₽';
+                    let summa = (parseFloat(document.querySelector('.summa').textContent.replace(",",".").replace(/[^0-9.]/gim, "")) + parseFloat(data.price)).toFixed(2);
+                    let discount = ((parseFloat(document.querySelector('.discountSumText').textContent.replace(",",".").replace(/[^0-9.]/gim, "")) + parseFloat(parseFloat(data.price) / 100 * data.discount)).toFixed(2));
+                    document.querySelector('.discountSumText').textContent = parseFloat(discount).toLocaleString('ru-RU') + ' ₽';
+                    document.querySelector('.summa').textContent = parseFloat(summa).toLocaleString('ru-RU') + ' ₽';
+                    document.querySelector('.generalSum-summa').textContent = (summa - discount).toLocaleString('ru-RU') + ' ₽';
                     if (parseFloat(localStorage.getItem('counter')) == 0) {
                         document.querySelector(".counter").style.display = 'none';
                     }
@@ -205,11 +204,11 @@ function check() {
                         document.querySelector(".counter").style.display = 'block';
                     }
                     let data = JSON.parse(localStorage.getItem('data'))[checkbox.getAttribute('id')];
-                    let summa = (parseFloat(document.querySelector('.summa').textContent) - parseFloat(data.price)).toFixed(2);
-                    document.querySelector('.summa').textContent = summa + ' ₽';
-                    let discount = (parseFloat(document.querySelector('.discountSumText').textContent) - parseFloat(parseFloat(data.price) / 100 * data.discount).toFixed(2));
-                    document.querySelector('.discountSumText').textContent = discount.toFixed(2) + ' ₽';
-                    document.querySelector('.generalSum-summa').textContent = (summa - discount).toFixed(2) + ' ₽';
+                    let summa = (parseFloat(document.querySelector('.summa').textContent.replace(",",".").replace(/[^0-9.]/gim, "")) - parseFloat(data.price)).toFixed(2);
+                    document.querySelector('.summa').textContent = parseFloat(summa).toLocaleString('ru-RU') + ' ₽';
+                    let discount = (parseFloat(document.querySelector('.discountSumText').textContent.replace(",",".").replace(/[^0-9.]/gim, "")) - parseFloat(parseFloat(data.price) / 100 * data.discount).toFixed(2));
+                    document.querySelector('.discountSumText').textContent = parseFloat(discount).toLocaleString('ru-RU') + ' ₽';
+                    document.querySelector('.generalSum-summa').textContent = (summa - discount).toLocaleString('ru-RU') + ' ₽';
                     script();
                 }
             }
