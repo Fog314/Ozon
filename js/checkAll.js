@@ -19,5 +19,3 @@ if (document.querySelector('#checkAll')) {
 
     })
 }
-
-export default checkAll;
