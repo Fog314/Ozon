@@ -101,7 +101,7 @@ function loadcarts() {
             }
             out += '</div>';
             out += '</div>';
-            out += '<hr style="background: rgba(0, 26, 52, 0.163844)";>';
+            out += '<hr style="background: rgba(0, 26, 52, 0.163844)">';
         }
     }
 
@@ -154,7 +154,6 @@ function loadcarts() {
 
 function clearCart() {
     if (document.querySelector('.carts') == null) {
-        // $('.header .title').html('<div>Корзина пуста</div>');
         $('.objects').hide();
         $('.header .title').css('width', '500px');
         $('.cartSelect').hide();
@@ -176,10 +175,13 @@ function check() {
                     checkbox.setAttribute('checked', 'checked');
                     localStorage.setItem(checkbox.getAttribute('id'), (JSON.stringify(JSON.parse(localStorage.getItem('data'))[checkbox.getAttribute('id')])));
                     localStorage.setItem('counter', (parseFloat(localStorage.getItem('counter')) + 1));
-                    document.querySelector(".counter").textContent = localStorage.getItem('counter');
+                    if (document.querySelector(".counter")) {
+                        document.querySelector(".counter").textContent = localStorage.getItem('counter');
+                    }
+
                     let data = JSON.parse(localStorage.getItem('data'))[checkbox.getAttribute('id')];
-                    let summa = (parseFloat(document.querySelector('.summa').textContent.replace(",",".").replace(/[^0-9.]/gim, "")) + parseFloat(data.price)).toFixed(2);
-                    let discount = ((parseFloat(document.querySelector('.discountSumText').textContent.replace(",",".").replace(/[^0-9.]/gim, "")) + parseFloat(parseFloat(data.price) / 100 * data.discount)).toFixed(2));
+                    let summa = (parseFloat(document.querySelector('.summa').textContent.replace(",", ".").replace(/[^0-9.]/gim, "")) + parseFloat(data.price)).toFixed(2);
+                    let discount = ((parseFloat(document.querySelector('.discountSumText').textContent.replace(",", ".").replace(/[^0-9.]/gim, "")) + parseFloat(parseFloat(data.price) / 100 * data.discount)).toFixed(2));
                     document.querySelector('.discountSumText').textContent = parseFloat(discount).toLocaleString('ru-RU') + ' ₽';
                     document.querySelector('.summa').textContent = parseFloat(summa).toLocaleString('ru-RU') + ' ₽';
                     document.querySelector('.generalSum-summa').textContent = (summa - discount).toLocaleString('ru-RU') + ' ₽';
@@ -196,7 +198,9 @@ function check() {
                     checkbox.removeAttribute("checked");
                     localStorage.removeItem(checkbox.getAttribute('id'));
                     localStorage.setItem('counter', (parseFloat(localStorage.getItem('counter')) - 1));
-                    document.querySelector(".counter").textContent = localStorage.getItem('counter');
+                    if (document.querySelector(".counter")) {
+                        document.querySelector(".counter").textContent = localStorage.getItem('counter');
+                    }
                     if (parseFloat(localStorage.getItem('counter')) == 0) {
                         document.querySelector(".counter").style.display = 'none';
                     }
@@ -204,9 +208,9 @@ function check() {
                         document.querySelector(".counter").style.display = 'block';
                     }
                     let data = JSON.parse(localStorage.getItem('data'))[checkbox.getAttribute('id')];
-                    let summa = (parseFloat(document.querySelector('.summa').textContent.replace(",",".").replace(/[^0-9.]/gim, "")) - parseFloat(data.price)).toFixed(2);
+                    let summa = (parseFloat(document.querySelector('.summa').textContent.replace(",", ".").replace(/[^0-9.]/gim, "")) - parseFloat(data.price)).toFixed(2);
                     document.querySelector('.summa').textContent = parseFloat(summa).toLocaleString('ru-RU') + ' ₽';
-                    let discount = (parseFloat(document.querySelector('.discountSumText').textContent.replace(",",".").replace(/[^0-9.]/gim, "")) - parseFloat(parseFloat(data.price) / 100 * data.discount).toFixed(2));
+                    let discount = (parseFloat(document.querySelector('.discountSumText').textContent.replace(",", ".").replace(/[^0-9.]/gim, "")) - parseFloat(parseFloat(data.price) / 100 * data.discount).toFixed(2));
                     document.querySelector('.discountSumText').textContent = parseFloat(discount).toLocaleString('ru-RU') + ' ₽';
                     document.querySelector('.generalSum-summa').textContent = (summa - discount).toLocaleString('ru-RU') + ' ₽';
                     script();
@@ -221,24 +225,31 @@ if (document.querySelector('.delete')) {
         let checkboxes = document.querySelectorAll('input[type="checkbox"]');
         for (let checkbox of checkboxes) {
             if (checkbox.getAttribute('checked')) {
+                $('div#' + checkbox.getAttribute('id')).next().remove();
                 $('div#' + checkbox.getAttribute('id')).remove();
                 localStorage.removeItem(checkbox.getAttribute('id'));
                 clearCart();
             }
         }
         localStorage.setItem('counter', 0);
-        document.querySelector(".counter").textContent = localStorage.getItem('counter');
+        if (document.querySelector(".counter")) {
+            document.querySelector(".counter").textContent = localStorage.getItem('counter');
+        }
         if (parseFloat(localStorage.getItem('counter')) == 0) {
             document.querySelector(".counter").style.display = 'none';
         }
         if (parseFloat(localStorage.getItem('counter')) !== 0) {
             document.querySelector(".counter").style.display = 'block';
         }
-        document.querySelector('.summa').textContent = parseFloat(0).toFixed(2) + ' ₽';
-        document.querySelector('.discountSumText').textContent = parseFloat(0).toFixed(2) + ' ₽';
-        document.querySelector('.generalSum-summa').textContent = parseFloat(0).toFixed(2) + ' ₽';
-        document.querySelector(".counter").textContent = localStorage.getItem('counter');
+        if (document.querySelector('.summa')) {
+            document.querySelector('.summa').textContent = parseFloat(0).toFixed(2) + ' ₽';
+            document.querySelector('.discountSumText').textContent = parseFloat(0).toFixed(2) + ' ₽';
+            document.querySelector('.generalSum-summa').textContent = parseFloat(0).toFixed(2) + ' ₽';
+        }
 
+        if (document.querySelector(".counter")) {
+            document.querySelector(".counter").textContent = localStorage.getItem('counter');
+        }
     })
 }
 
@@ -343,7 +354,9 @@ function script() {
                 numTimes--;
                 localStorage.setItem("counter", (numTimes).toString(10));
                 localStorage.removeItem(event.target.getAttribute('id'));
-                document.querySelector(".counter").textContent = localStorage.getItem('counter');
+                if (document.querySelector(".counter")) {
+                    document.querySelector(".counter").textContent = localStorage.getItem('counter');
+                }
                 event.target.style.color = '#FFFFFF';
                 event.target.style.background = '#005BFF';
                 if (document.querySelector(".counter").textContent == '0') {
