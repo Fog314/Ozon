@@ -7,13 +7,83 @@ body {
   display: relative;
 }
 
+.preloader {
+  /*фиксированное позиционирование*/
+  position: fixed;
+  /* координаты положения */
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  /* фоновый цвет элемента */
+  background: #e0e0e0;
+  /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+  z-index: 1001;
+}
+
+.preloader__row {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  text-align: center;
+  animation: preloader-rotate 2s infinite linear;
+}
+
+.preloader__item {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  background-color: #337ab7;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  animation: preloader-bounce 2s infinite ease-in-out;
+}
+
+.preloader__item:last-child {
+  top: auto;
+  bottom: 0;
+  animation-delay: -1s;
+}
+
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-bounce {
+
+  0%,
+  100% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+.loaded_hiding .preloader {
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+
+.loaded .preloader {
+  display: none;
+}
+
 .navigation-bg {
   position: absolute;
   width: 1024px;
   height: 60px;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   top: 0px;
   grid-area: navigation-bg;
 }
@@ -37,7 +107,7 @@ body {
   height: 16px;
 }
 
-.navigation-bg .navigation > div {
+.navigation-bg .navigation>div {
   position: relative;
 }
 
@@ -58,7 +128,8 @@ body {
   cursor: pointer;
 }
 
-.navigation-bg .navigation button:active, .navigation-bg .navigation button:focus {
+.navigation-bg .navigation button:active,
+.navigation-bg .navigation button:focus {
   color: #001A34;
   outline: none;
   cursor: default;
@@ -134,7 +205,7 @@ body {
   height: 78px;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   top: 60px;
 }
 
@@ -170,7 +241,7 @@ body {
   width: 1024px;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .singleGood {
@@ -281,7 +352,8 @@ body {
   opacity: 0.7;
 }
 
-.singleGood .info-block .buttonContainer button:active, .singleGood .info-block .buttonContainer button:focus {
+.singleGood .info-block .buttonContainer button:active,
+.singleGood .info-block .buttonContainer button:focus {
   outline: none;
 }
 
@@ -291,19 +363,19 @@ body {
   height: 60px;
   left: 43%;
   -webkit-transform: translateX(-48%);
-          transform: translateX(-48%);
+  transform: translateX(-48%);
   right: 82.13%;
   top: 138px;
   background: #F2F3F5;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'left right';
+  grid-template-areas: 'left right';
   -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .cartSelect .select {
@@ -349,7 +421,7 @@ body {
   width: 696px;
   left: 43%;
   -webkit-transform: translateX(-48%);
-          transform: translateX(-48%);
+  transform: translateX(-48%);
   right: 82.13%;
   top: 198px;
   margin-top: 18px;
@@ -358,9 +430,9 @@ body {
 .cartsContainer .carts {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'cartsInfo cartsPrice';
+  grid-template-areas: 'cartsInfo cartsPrice';
   -ms-grid-columns: 7fr 3fr;
-      grid-template-columns: 7fr 3fr;
+  grid-template-columns: 7fr 3fr;
   margin: 24px;
   position: relative;
 }
@@ -403,7 +475,7 @@ body {
   left: 0px;
   top: 50%;
   -webkit-transform: translateY(-25%);
-          transform: translateY(-25%);
+  transform: translateY(-25%);
   font-size: 20px;
   line-height: 26px;
   text-align: right;
@@ -433,9 +505,9 @@ body {
 .finalOrder .orderPrice {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'goods summa';
+  grid-template-areas: 'goods summa';
   -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   position: absolute;
   color: #001A34;
   left: 3.45%;
@@ -467,9 +539,9 @@ body {
 .finalOrder .orderDiscount {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'discount discountSum';
+  grid-template-areas: 'discount discountSum';
   -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   position: absolute;
   left: 3.45%;
   right: 45.98%;
@@ -504,7 +576,7 @@ body {
   bottom: 56.58%;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   width: 648px;
   background: #001a342a;
 }
@@ -513,9 +585,9 @@ body {
   position: absolute;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'generalText summa';
+  grid-template-areas: 'generalText summa';
   -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   left: 3.45%;
   right: 45.98%;
   top: 55.16%;
@@ -565,7 +637,7 @@ body {
   left: 53%;
   top: 30%;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   bottom: 7.12%;
   display: inline-block;
   width: 40%;
@@ -589,7 +661,8 @@ body {
   opacity: 0.7;
 }
 
-.finalOrder .getOrder .getOrder-button button:active, .finalOrder .getOrder .getOrder-button button:focus {
+.finalOrder .getOrder .getOrder-button button:active,
+.finalOrder .getOrder .getOrder-button button:focus {
   outline: none;
   cursor: default;
 }
@@ -598,7 +671,7 @@ body {
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   top: 55%;
   width: 200px;
   height: 40px;
@@ -616,7 +689,8 @@ body {
   opacity: 0.7;
 }
 
-.catalogButton:active, .catalogButton:focus {
+.catalogButton:active,
+.catalogButton:focus {
   outline: none;
   cursor: default;
 }
@@ -627,7 +701,7 @@ body {
   width: 1024px;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .registration form {
@@ -667,13 +741,16 @@ body {
   width: 197px;
 }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
   .navigation-bg .cart .counter {
     display: block !important;
   }
+
   .catalogButton {
     top: 65%;
   }
+
   .orderTitle {
     left: 0% !important;
     top: calc(40% - 26px/2 - 103.5px) !important;
@@ -727,12 +804,12 @@ label.checkAll {
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+.container:hover input~.checkmark {
   background-color: #ccc;
 }
 
 /* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
+.container input:checked~.checkmark {
   background-color: #2196F3;
 }
 
@@ -744,7 +821,7 @@ label.checkAll {
 }
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.container input:checked~.checkmark:after {
   display: block;
 }
 
@@ -792,12 +869,12 @@ label.checkAll {
 }
 
 /* On mouse-over, add a grey background color */
-.containerAll:hover input ~ .checkmarkAll {
+.containerAll:hover input~.checkmarkAll {
   background-color: #ccc;
 }
 
 /* When the checkbox is checked, add a blue background */
-.containerAll input:checked ~ .checkmarkAll {
+.containerAll input:checked~.checkmarkAll {
   background-color: #2196F3;
 }
 
@@ -809,7 +886,7 @@ label.checkAll {
 }
 
 /* Show the checkmark when checked */
-.containerAll input:checked ~ .checkmarkAll:after {
+.containerAll input:checked~.checkmarkAll:after {
   display: block;
 }
 
@@ -824,4 +901,5 @@ label.checkAll {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
 /*# sourceMappingURL=styles.css.map */
