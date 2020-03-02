@@ -10,8 +10,16 @@
 </head>
 
 <body>
+    <div class="preloader">
+        <div class="preloader__row">
+            <div class="preloader__item"></div>
+            <div class="preloader__item"></div>
+        </div>
+    </div>
     <div class="navigation-bg">
-        <a href='index.html'><div class="mainTitle"></div></a>
+        <a href='index.html'>
+            <div class="mainTitle"></div>
+        </a>
         <div class="navigation">
             <a href='index.html'><button>Каталог</button></a>
             <button>Доставка</button>
@@ -26,11 +34,11 @@
             </svg>
         </div>
         <div class="cart">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M9.99997 2C7.79083 2 5.99997 3.79086 5.99997 6V8H0.867188L2.1792 18.4961C2.42942 20.4979 4.13102 22 6.14832 22H17.8516C19.8689 22 21.5705 20.4979 21.8207 18.4961L23.1328 8H18V6C18 3.79086 16.2091 2 14 2H9.99997ZM13 9C13 8.44772 12.5523 8 12 8H7.99997V6C7.99997 4.89543 8.8954 4 9.99997 4H14C15.1045 4 16 4.89543 16 6V10H20.8672L19.8362 18.2481C19.7111 19.2489 18.8603 20 17.8516 20H6.14832C5.13967 20 4.28887 19.2489 4.16376 18.2481L3.13275 10H12C12.5523 10 13 9.55228 13 9Z"
-                        fill="#808D9A" />
-                </svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M9.99997 2C7.79083 2 5.99997 3.79086 5.99997 6V8H0.867188L2.1792 18.4961C2.42942 20.4979 4.13102 22 6.14832 22H17.8516C19.8689 22 21.5705 20.4979 21.8207 18.4961L23.1328 8H18V6C18 3.79086 16.2091 2 14 2H9.99997ZM13 9C13 8.44772 12.5523 8 12 8H7.99997V6C7.99997 4.89543 8.8954 4 9.99997 4H14C15.1045 4 16 4.89543 16 6V10H20.8672L19.8362 18.2481C19.7111 19.2489 18.8603 20 17.8516 20H6.14832C5.13967 20 4.28887 19.2489 4.16376 18.2481L3.13275 10H12C12.5523 10 13 9.55228 13 9Z"
+                    fill="#808D9A" />
+            </svg>
             <div class="counter">
                 <div class="ellipse"></div>
             </div>
@@ -49,7 +57,7 @@
                 <input type="checkbox" id="checkAll" checked="checked">
                 <span class="checkmarkAll"></span>
             </label>
-            <label class ="checkAll" for="checkAll">Выбрать всё</label>
+            <label class="checkAll" for="checkAll">Выбрать всё</label>
 
         </div>
         <div class="delete">Удалить выбранное</div>
@@ -58,6 +66,6 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src='/dist/js/bundle.js'></script>
+<script src='/dist/js/bundle.js'></script>
 
 </html>
